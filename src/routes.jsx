@@ -1,20 +1,12 @@
-// import {
-//     HomeIcon,
-//     UserCircleIcon,
-//     TableCellsIcon,
-//     InformationCircleIcon
-//   } from "@heroicons/react/24/solid";
-
-  import Home from "./page/home/Home";
+import Home from "./page/home/Home";
 import About from "./page/about/About";
 import ContactUs from "./page/contactUs/ContactUs";
 import BMI from "./page/bmi/BMI";
 import HealthReview from "./page/healthReview/HealthReview";
-import OBESSchool from "./page/obesSchool/ObesSchool";
-import DietPlan from "./page/obesSchool/submenus/DietPlan";
-import ExerciseRoutine from "./page/obesSchool/submenus/ExerciseRoutine";
-import DailyTrack from "./page/obesSchool/submenus/DailyTrack";
-import Videos from "./page/obesSchool/submenus/Videos";
+import DietPlan from "./page/obesSchool/submenus/dietPlan/DietPlan";
+import ExerciseRoutine from "./page/obesSchool/submenus/exerciseRoutine/ExerciseRoutine";
+import DailyTrack from "./page/obesSchool/submenus/dailyTrack/DailyTrack";
+import VideoGallery from "./page/obesSchool/submenus/videoGallery/VideoGallery";
   
 //   const icon = {
 //     className: "w-5 h-5 text-inherit",
@@ -72,7 +64,7 @@ import Videos from "./page/obesSchool/submenus/Videos";
               {
                   name: "Videos",
                   path: "/obesSchool/videos",
-                  element: <Videos />,
+                  element: <VideoGallery />,
               },
           ],
         },

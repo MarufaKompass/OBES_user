@@ -11,38 +11,26 @@ export default function Header() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <nav className="p-8 shadow-2xl"  >
+    <nav className="p-8 shadow-lg"  >
       <div className="flex justify-between px-10 container">
         <div>
           <img src={logo} alt="logo" className="w-30"/>
         </div>
 
         <div className="flex gap-2 items-center" >
-          {/* <div>
-            {pages.map((page, index) => (
-              <Link
-                key={index}
-                to={page.path}
-                className="text-[#333] hover:text-[#ec9f2b] capitalize pl-4 text-[16px] font-medium"
-                style={{ fontFamily: "poppins" }}
-              >
-                {page.name}
-              </Link>
-            ))}
-          </div> */}
-
+        
 
       {pages.map((page, index) => (
         <div key={index} className="relative"  >
           <div
             onClick={() => handleToggle(index)}
-            className="cursor-pointer text-[#333] hover:text-[#ec9f2b] capitalize pl-4 text-[16px] font-medium flex justify-between items-center"
+            className="cursor-pointer text-[#333] hover:text-[#ec9f2b] capitalize pl-8 text-[15px] font-medium flex justify-between items-center"
             style={{ fontFamily: "poppins" }}
           >
             <Link to={page.path}>{page.name}</Link>
 
             {page.children && (
-              <span className="pl-2 text-[10px]">
+              <span className="pl-2">
                 {openIndex === index ?  <ChevronUp /> : <ChevronDown />}
               </span>
             )}

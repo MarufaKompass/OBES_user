@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import whiteLogo from "../../public/images/logo/whiteLogo.png"
 export default function Footer() {
   return (
-<footer className="w-full border-t bg-gray-800 text-white">
+<footer className="w-full border-t bg-[#1E2939] text-white">
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16 lg:py-20">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand Info & Social Icons */}
@@ -13,12 +13,12 @@ export default function Footer() {
               {/* <Heart className="h-6 w-6 text-primary" /> */}
               <img src={whiteLogo} alt="whiteLogo" className='w-30'/>
             </div>
-            <p className="text-gray-400">
+            <p className="text-[#808080] text-[14px]"  style={{ fontFamily: "poppins" }}>
               Providing exceptional healthcare services with compassion and expertise since 1995.
             </p>
             <div className="flex space-x-4">
               {/* Facebook */}
-              <button className="text-white hover:text-blue-600" aria-label="Facebook">
+              <button className="text-white hover:text-white" aria-label="Facebook">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -99,12 +99,12 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Quick Links</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#" className="text-white hover:text-primary">Home</Link>
-              <Link href="#about" className="text-white hover:text-primary">About Us</Link>
-              <Link href="#services" className="text-white hover:text-primary">Services</Link>
-              <Link href="#doctors" className="text-white hover:text-primary">Our Doctors</Link>
-              <Link href="#blog" className="text-white hover:text-primary">Blog</Link>
-              <Link href="#contact" className="text-white hover:text-primary">Contact</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Home</Link>
+              <Link href="#about" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>About Us</Link>
+              <Link href="#services" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Services</Link>
+              <Link href="#doctors" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Our Doctors</Link>
+              <Link href="#blog" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Blog</Link>
+              <Link href="#contact" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Contact</Link>
             </nav>
           </div>
 
@@ -112,19 +112,19 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Services</h3>
             <nav className="flex flex-col space-y-2">
-              <Link href="#" className="text-white hover:text-primary">General Medicine</Link>
-              <Link href="#" className="text-white hover:text-primary">Cardiology</Link>
-              <Link href="#" className="text-white hover:text-primary">Pediatrics</Link>
-              <Link href="#" className="text-white hover:text-primary">Diagnostics</Link>
-              <Link href="#" className="text-white hover:text-primary">Emergency Care</Link>
-              <Link href="#" className="text-white hover:text-primary">Preventive Care</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>General Medicine</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Cardiology</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Pediatrics</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Diagnostics</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Emergency Care</Link>
+              <Link href="#" className="text-white hover:text-primary"  style={{ fontFamily: "poppins" }}>Preventive Care</Link>
             </nav>
           </div>
 
           {/* Newsletter */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Newsletter</h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400"  style={{ fontFamily: "poppins" }}>
               Subscribe to our newsletter for the latest updates and health tips.
             </p>
             <form className="space-y-2">
@@ -137,13 +137,14 @@ export default function Footer() {
                 <button
                   type="submit"
                   className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-dark"
+                  style={{ fontFamily: "poppins" }}
                 >
                   Subscribe
                 </button>
               </div>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-400"  style={{ fontFamily: "poppins" }}>
                 By subscribing, you agree to our{" "}
-                <Link href="#" className="underline hover:text-white">
+                <Link href="#" className="underline hover:text-white"  style={{ fontFamily: "poppins" }}>
                   Privacy Policy
                 </Link>
               </p>
@@ -154,13 +155,13 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="mt-10 border-t pt-6">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <p className="text-center text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} MediCare. All rights reserved.
+            <p className="text-center text-sm text-gray-400" style={{ fontFamily: "poppins" }}>
+              &copy; {new Date().getFullYear()} OBES. All rights reserved.
             </p>
             <nav className="flex gap-4 text-sm">
-              <Link to="#" className="text-gray-400 hover:text-white">Privacy Policy</Link>
-              <Link to="#" className="text-gray-400 hover:text-white">Terms of Service</Link>
-              <Link to="#" className="text-gray-400 hover:text-white">Cookie Policy</Link>
+              <Link to="#" className="text-gray-400 hover:text-white" style={{ fontFamily: "poppins" }}>Privacy Policy</Link>
+              <Link to="#" className="text-gray-400 hover:text-white" style={{ fontFamily: "poppins" }}>Terms of Service</Link>
+              <Link to="#" className="text-gray-400 hover:text-white" style={{ fontFamily: "poppins" }}>Cookie Policy</Link>
             </nav>
           </div>
         </div>

@@ -1,0 +1,106 @@
+import React from "react";
+
+export default function HealthSummary({ submitted, setSubmitted, rating }) {
+  return (
+    <div>
+      <div className="bg-white rounded-lg shadow p-6">
+        <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-green-700">
+          {/* Award icon */}
+          <svg
+            className="h-5 w-5 text-green-600"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 6v6l4 2"
+            />
+          </svg>
+          Health Summary
+        </div>
+        <p className="text-sm text-gray-500 mb-6">
+          Your health journey at a glance
+        </p>
+
+        {submitted ? (
+          <div className="text-center space-y-4">
+            <div className="mx-auto h-16 w-16 bg-green-100 rounded-full flex items-center justify-center">
+              <svg
+                className="h-8 w-8 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <h3 className="text-xl font-medium text-green-800">
+              Thank You for Your Review!
+            </h3>
+            <p className="text-gray-600">
+              Your feedback helps us improve our healthcare services. We've
+              recorded your rating of {rating}/5.
+            </p>
+            <button
+              onClick={() => setSubmitted(false)}
+              className="mt-4 border border-green-300 text-green-700 px-4 py-2 rounded hover:bg-green-50"
+            >
+              Submit Another Review
+            </button>
+          </div>
+        ) : (
+          <div className="space-y-6">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="bg-green-50 p-4 rounded-md">
+                <h3 className="text-green-800 font-medium">Health Score</h3>
+                <div className="flex justify-between items-end mt-2">
+                  <span className="text-3xl font-bold text-green-700">
+                    82/100
+                  </span>
+                  <span className="text-sm text-green-600">
+                    ↑ 4% from last month
+                  </span>
+                </div>
+              </div>
+              <div className="bg-blue-50 p-4 rounded-md">
+                <h3 className="text-blue-800 font-medium">Appointments</h3>
+                <div className="flex justify-between items-end mt-2">
+                  <span className="text-3xl font-bold text-blue-700">3</span>
+                  <span className="text-sm text-blue-600">Next: April 28</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-md">
+              <h3 className="text-gray-800 font-medium mb-2">
+                Recent Activity
+              </h3>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between border-b pb-2 border-gray-200">
+                  <span className="text-gray-600">Annual Physical</span>
+                  <span className="text-gray-500">2 weeks ago</span>
+                </li>
+                <li className="flex justify-between border-b pb-2 border-gray-200">
+                  <span className="text-gray-600">Dental Checkup</span>
+                  <span className="text-gray-500">1 month ago</span>
+                </li>
+                <li className="flex justify-between">
+                  <span className="text-gray-600">Vaccination</span>
+                  <span className="text-gray-500">3 months ago</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
