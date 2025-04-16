@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router'
-import {
-  ArrowRight,
-} from "lucide-react"
+// import { Link } from 'react-router'
+// import {
+//   ArrowRight,
+// } from "lucide-react"
+
+import heroSection from "../../../public/images/home/heroSection.png"
 export default function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-indigo-50">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fbfbfb]">
     <div className="container mx-auto px-4 md:px-6">
       <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <div className="flex flex-col justify-center space-y-4">
@@ -34,7 +36,7 @@ export default function HeroSection() {
           </div> */}
         </div>
         <img
-          src="/placeholder.svg"
+          src={heroSection}
           alt="Healthcare professionals"
           width={550}
           height={550}
