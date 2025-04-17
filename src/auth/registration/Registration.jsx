@@ -63,7 +63,7 @@ export default function Registration() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-4">
             <div>
-              <label className="font-serif  text-[16px]">Full Name</label>
+              <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Full Name</label>
               <input
                 name="fullname"
                 type="text"
@@ -77,7 +77,7 @@ export default function Registration() {
               <div class="">
                 {" "}
                 <div>
-                  <label className="font-serif  text-[16px]">Code</label>
+                  <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Code</label>
 
                   <input
                     name="ccode"
@@ -92,7 +92,7 @@ export default function Registration() {
               <div class="col-span-3">
                 {" "}
                 <div>
-                  <label className="font-serif  text-[16px]">
+                  <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>
                     Mobile Number
                   </label>
                   <input
@@ -110,18 +110,19 @@ export default function Registration() {
             </div>
 
             <div>
-              <label className="font-serif  text-[16px]">Email address</label>
+              <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Email address</label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 placeholder="Email Address"
                 {...register("logemail", { required: true })}
-                className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                className="mt-1  appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
               />
               {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
             </div>
             <div>
+            <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Date Of Birth</label>
               <Controller
                 name="dob"
                 control={control}
@@ -132,13 +133,22 @@ export default function Registration() {
                     value={field.value}
                     onChange={(date) => field.onChange(date)}
                     format="YYYY-MM-DD"
-                    style={{ width: "100%" }}
+                    style={{
+                      width: "100%",
+                      marginTop: 4,
+                      paddingTop: 9,
+                      paddingBottom: 9,
+                      border: "1px solid #848282",
+                      outline: "none", 
+                      boxShadow: "none", 
+                      borderRadius:'5px'
+                    }}
                   />
                 )}
               />
             </div>
             <div>
-              <label className="font-serif  text-[16px]">Password</label>
+              <label className="font-serif text-[14px]" style={{ fontFamily: "poppins" }}>Password</label>
               <div className="relative">
                 <input
                   id="password"
@@ -146,7 +156,7 @@ export default function Registration() {
                   type="password"
                   placeholder="Password"
                   {...register("password", { required: true })}
-                  className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                  className="mt-1 appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
                 />
                 <button
                   type="button"
