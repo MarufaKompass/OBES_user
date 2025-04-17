@@ -1,16 +1,46 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import image from "../../../public/images/auth/registrationBg.jpg";
+import { DatePicker } from "antd";
+import dayjs from "dayjs";
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 export default function Registration() {
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   // const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const {
     register,
     handleSubmit,
+    control,
     // formState: { errors },
   } = useForm();
+  const handleButtonClick = () => {
+    navigate('/');
+  };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async(data) => {
+    const formattedDob = dayjs(data.dob).format("YYYY-MM-DD");
+    const finalData = {
+      ...data,
+      dob: formattedDob,
+    };
+    console.log(finalData);
+    try {
+      const res = await axios.post(
+        "https://obapi.myhealthrow.com/public/api/signup",
+        finalData
+      );
+      console.log("Response:", res);
+      // sessionStorage.setItem("token", JSON.stringify(res.data.token));
+      toast.success(res.data?.data?.message);
+
+      handleButtonClick();
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
+  };
 
   return (
     <div
@@ -29,53 +59,54 @@ export default function Registration() {
             </a>
           </p>
         </div>
-        {/* 
-      <div className="flex gap-4 mt-6">
-        <button variant="outline" className="w-full flex items-center justify-center gap-2">
-          <Github className="h-4 w-4" />
-          <span>GitHub</span>
-        </button>
-        <button variant="outline" className="w-full flex items-center justify-center gap-2">
-          <Twitter className="h-4 w-4" />
-          <span>Twitter</span>
-        </button>
-      </div> */}
 
-        {/* <div className="relative mt-6">
-        <div className="absolute inset-0 flex items-center">
-          <div className="w-full border-t border-gray-300" />
-        </div>
-        <div className="relative flex justify-center text-sm">
-          <span className="px-2 bg-white text-gray-500">Or continue with</span>
-        </div>
-      </div> */}
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-4">
             <div>
               <label className="font-serif  text-[16px]">Full Name</label>
               <input
-                id="name"
-                name="name"
+                name="fullname"
                 type="text"
-                autoComplete="name"
                 placeholder="Full Name"
-                {...register("name")}
+                {...register("fulname", { required: true })}
                 className="mt-1 appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
               />
               {/* {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>} */}
             </div>
-            <div>
-              <label className="font-serif  text-[16px]">Mobile Number</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autoComplete="name"
-                placeholder="Mobile Number"
-                {...register("name")}
-                className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
-              />
-              {/* {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>} */}
+            <div class="grid grid-cols-4 gap-4">
+              <div class="">
+                {" "}
+                <div>
+                  <label className="font-serif  text-[16px]">Code</label>
+
+                  <input
+                    name="ccode"
+                    value="88"
+                    {...register("ccode", { required: true })}
+                    className="mt-1 appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                  />
+
+                  {/* {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>} */}
+                </div>
+              </div>
+              <div class="col-span-3">
+                {" "}
+                <div>
+                  <label className="font-serif  text-[16px]">
+                    Mobile Number
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    autoComplete="name"
+                    placeholder="Mobile Number"
+                    {...register("logmobile", { required: true })}
+                    className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                  />
+                  {/* {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>} */}
+                </div>
+              </div>
             </div>
 
             <div>
@@ -85,13 +116,27 @@ export default function Registration() {
                 name="email"
                 type="email"
                 placeholder="Email Address"
-                defaultValue="Email Address"
-                {...register("example")}
+                {...register("logemail", { required: true })}
                 className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
               />
               {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
             </div>
-
+            <div>
+              <Controller
+                name="dob"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => (
+                  <DatePicker
+                    {...field}
+                    value={field.value}
+                    onChange={(date) => field.onChange(date)}
+                    format="YYYY-MM-DD"
+                    style={{ width: "100%" }}
+                  />
+                )}
+              />
+            </div>
             <div>
               <label className="font-serif  text-[16px]">Password</label>
               <div className="relative">
@@ -100,7 +145,7 @@ export default function Registration() {
                   name="password"
                   type="password"
                   placeholder="Password"
-                  {...register("example")}
+                  {...register("password", { required: true })}
                   className="mt-1  appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
                 />
                 <button
