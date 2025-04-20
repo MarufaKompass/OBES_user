@@ -5,6 +5,7 @@ import logo from "../../public/images/logo/Logo.png";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { useObeContext } from "../../components/contextAPI/MainContextProvider";
 import man from "../../public/images/header/man.png"
+import UserInfo from "./UserInfo";
 export default function Header() {
   const pages = routes[0].pages;
   const [openIndex, setOpenIndex] = useState(null);
@@ -62,9 +63,12 @@ export default function Header() {
             </div>
           ))}
         </div>
-        <div className=" flex justify-between items-center ml-4 rounded-2xl ">
+        <div className=" flex justify-between items-center ml-4 rounded-2xl relative group cursor">
         <div>
           <img src={man} alt="man"  className="w-14 h-14" />
+        </div>
+        <div>
+          <UserInfo></UserInfo>
         </div>
         </div>
       </div>
