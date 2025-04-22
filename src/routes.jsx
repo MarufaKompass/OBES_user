@@ -7,6 +7,7 @@ import DietPlan from "./page/obesSchool/submenus/dietPlan/DietPlan";
 import ExerciseRoutine from "./page/obesSchool/submenus/exerciseRoutine/ExerciseRoutine";
 import DailyTrack from "./page/obesSchool/submenus/dailyTrack/DailyTrack";
 import VideoGallery from "./page/obesSchool/submenus/videoGallery/VideoGallery";
+import ObesQuestion from "./page/obesQuestion/ObesQuestion";
   
 //   const icon = {
 //     className: "w-5 h-5 text-inherit",
@@ -73,6 +74,12 @@ import VideoGallery from "./page/obesSchool/submenus/videoGallery/VideoGallery";
           name: "contact Us",
           path: "/contactUs",
           element: <ContactUs />,
+        },
+        {
+        //   icon: <TableCellsIcon {...icon} />,
+          name: "Question",
+          path: "/question",
+          element: <ObesQuestion />,
         },
         
       ],
