@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
-import image from "../../../public/images/auth/registrationBg.jpg";
+import image from "../../../public/images/auth/registrationBg.png";
 import { DatePicker } from "antd";
 import dayjs from "dayjs";
-import axios from 'axios';
-import { toast } from 'react-toastify';
+import axios from "axios";
+import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 export default function Registration() {
   const [showPassword, setShowPassword] = useState(false);
+  const [selected, setSelected] = useState("");
   const navigate = useNavigate();
   // const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const {
@@ -17,29 +18,32 @@ export default function Registration() {
     // formState: { errors },
   } = useForm();
   const handleButtonClick = () => {
-    navigate('/');
+    navigate("/");
+  };
+  const handleButtonClickLogin = () => {
+    navigate("/auth/sign-in");
   };
 
-  const onSubmit = async(data) => {
+  const onSubmit = async (data) => {
     const formattedDob = dayjs(data.dob).format("YYYY-MM-DD");
     const finalData = {
       ...data,
       dob: formattedDob,
     };
     console.log(finalData);
-    try {
-      const res = await axios.post(
-        "https://obapi.myhealthrow.com/public/api/signup",
-        finalData
-      );
-      console.log("Response:", res);
-      // sessionStorage.setItem("token", JSON.stringify(res.data.token));
-      toast.success(res.data?.data?.message);
+    // try {
+    //   const res = await axios.post(
+    //     "https://obapi.myhealthrow.com/public/api/signup",
+    //     finalData
+    //   );
+    //   console.log("Response:", res);
+    //   // sessionStorage.setItem("token", JSON.stringify(res.data.token));
+    //   toast.success(res.data?.data?.message);
 
-      handleButtonClick();
-    } catch (error) {
-      console.error("Error posting data:", error);
-    }
+    //   handleButtonClick();
+    // } catch (error) {
+    //   console.error("Error posting data:", error);
+    // }
   };
 
   return (
@@ -54,16 +58,24 @@ export default function Registration() {
           </h2>
           <p className="mt-2 text-sm text-gray-600 font-serif ">
             Already have an account?{" "}
-            <a href="#" className="font-medium text-[#FE9A00] font-serif ">
+            <button
+              onClick={handleButtonClickLogin}
+              className="font-medium text-[#7b1e19] font-serif"
+            >
               Sign in
-            </a>
+            </button>
           </p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-4">
             <div>
-              <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Full Name</label>
+              <label
+                className="font-serif  text-[14px]"
+                style={{ fontFamily: "poppins" }}
+              >
+                Full Name
+              </label>
               <input
                 name="fullname"
                 type="text"
@@ -77,7 +89,12 @@ export default function Registration() {
               <div class="">
                 {" "}
                 <div>
-                  <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Code</label>
+                  <label
+                    className="font-serif  text-[14px]"
+                    style={{ fontFamily: "poppins" }}
+                  >
+                    Code
+                  </label>
 
                   <input
                     name="ccode"
@@ -92,7 +109,10 @@ export default function Registration() {
               <div class="col-span-3">
                 {" "}
                 <div>
-                  <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>
+                  <label
+                    className="font-serif  text-[14px]"
+                    style={{ fontFamily: "poppins" }}
+                  >
                     Mobile Number
                   </label>
                   <input
@@ -110,45 +130,108 @@ export default function Registration() {
             </div>
 
             <div>
-              <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Email address</label>
+              <label
+                className="font-serif  text-[14px]"
+                style={{ fontFamily: "poppins" }}
+              >
+                Email address
+              </label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 placeholder="Email Address"
                 {...register("logemail", { required: true })}
-                className="mt-1  appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                className="mt-1  appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-[#848282] placeholder:text-sm placeholder:normal"
               />
               {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
             </div>
-            <div>
-            <label className="font-serif  text-[14px]" style={{ fontFamily: "poppins" }}>Date Of Birth</label>
-              <Controller
-                name="dob"
-                control={control}
-                rules={{ required: true }}
-                render={({ field }) => (
-                  <DatePicker
-                    {...field}
-                    value={field.value}
-                    onChange={(date) => field.onChange(date)}
-                    format="YYYY-MM-DD"
-                    style={{
-                      width: "100%",
-                      marginTop: 4,
-                      paddingTop: 9,
-                      paddingBottom: 9,
-                      border: "1px solid #848282",
-                      outline: "none", 
-                      boxShadow: "none", 
-                      borderRadius:'5px'
-                    }}
-                  />
-                )}
-              />
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  className="font-serif  text-[14px]"
+                  style={{ fontFamily: "poppins" }}
+                >
+                  Date Of Birth
+                </label>
+                <Controller
+                  name="dob"
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field }) => (
+                    <DatePicker
+                      {...field}
+                      value={field.value}
+                      onChange={(date) => field.onChange(date)}
+                      format="YYYY-MM-DD"
+                      style={{
+                        width: "100%",
+                        marginTop: 4,
+                        paddingTop: 9,
+                        paddingBottom: 9,
+                        border: "1px solid #848282",
+                        outline: "none",
+                        boxShadow: "none",
+                        borderRadius: "5px",
+                        color: "#848282",
+                      }}
+                    />
+                  )}
+                />
+              </div>
+              <div>
+                <label
+                  className="font-serif  text-[14px]"
+                  style={{ fontFamily: "poppins" }}
+                >
+                  Type
+                </label>
+
+                <div className="flex items-center justify-center pt-[6px]">
+                  <div className="relative w-[100%]">
+                    <select
+                      value={selected}
+                      onChange={(e) => setSelected(e.target.value)}
+                      {...register("abcd", { required: true })}
+                      className="appearance-none w-full px-4 py-[10px] text-sm pr-10 border border-[#848282] bg-white text-[#848282] rounded-md focus:outline-none focus:ring-1 focus:ring-none focus:border-none"
+                    >
+                      <option value="" className="text-sm">
+                        Select Type
+                      </option>
+                      <option value="user">User</option>
+                      <option value="doctor">Doctor</option>
+                      
+                    </select>
+
+                    {/* Custom arrow icon */}
+                    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-[#848282]">
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
             <div>
-              <label className="font-serif text-[14px]" style={{ fontFamily: "poppins" }}>Password</label>
+              <label
+                className="font-serif text-[14px]"
+                style={{ fontFamily: "poppins" }}
+              >
+                Password
+              </label>
               <div className="relative">
                 <input
                   id="password"
@@ -156,7 +239,7 @@ export default function Registration() {
                   type="password"
                   placeholder="Password"
                   {...register("password", { required: true })}
-                  className="mt-1 appearance-none border w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
+                  className="mt-1 appearance-none border  w-full py-[10px] px-3 rounded-sm text-[#848282] leading-tight focus:outline-none focus:shadow-none  placeholder:text-gray-400 placeholder:text-sm placeholder:normal"
                 />
                 <button
                   type="button"
@@ -177,12 +260,12 @@ export default function Registration() {
               <input
                 id="agree"
                 type="checkbox"
-                className="h-4 w-4 checked:text-white accent-[#FE9A00] focus:ring-[#FE9A00] border-gray-300 rounded"
+                className="h-4 w-4 checked:text-white accent-[#7b1e19] focus:ring-[#7b1e19] border-gray-300 rounded"
               />
               <div className="ml-3 text-sm">
                 <label className="font-medium text-gray-700 font-serif ">
                   I agree to the{" "}
-                  <a href="#" className="text-[#FE9A00] hover:text-primary/90">
+                  <a href="#" className="text-[#7b1e19] hover:text-primary/90">
                     Terms of Service
                   </a>{" "}
                   and{" "}
@@ -197,7 +280,7 @@ export default function Registration() {
 
           <button
             type="submit"
-            className="w-full font-serif text-[18px] text-[#fff] bg-[#FE9A00] py-[10px] cursor-pointer mt-6"
+            className="w-full font-serif text-[18px] text-[#fff] bg-[#7b1e19] py-[10px] cursor-pointer mt-6"
           >
             Create Account
           </button>

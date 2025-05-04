@@ -33,9 +33,9 @@ export default function BMI() {
 
   return (
     <div>
-       <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100 p-4 flex items-center justify-center">
+       <div className="min-h-screen  bg-[rgba(123,30,25,0.1)] p-4 flex items-center justify-center">
       <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="bg-green-600 p-6 text-white">
+        <div className="bg-[#7b1e19] p-6 text-white">
           <div className="flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -75,7 +75,7 @@ export default function BMI() {
                 placeholder={unit === "metric" ? "e.g. 175" : "e.g. 69"}
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
+                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#7b1e19] focus:outline-none"
               />
             </div>
             <div>
@@ -87,7 +87,7 @@ export default function BMI() {
                 placeholder={unit === "metric" ? "e.g. 70" : "e.g. 154"}
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:outline-none"
+                className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#7b1e19] focus:outline-none"
               />
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function BMI() {
             </button>
             <button
               onClick={calculateBMI}
-              className="flex-1 py-2 bg-green-600 text-white font-medium rounded-md hover:bg-green-700"
+              className="flex-1 py-2 bg-[#7b1e19] text-white font-medium rounded-md hover:bg-[#7b1e19]"
             >
               Calculate
             </button>

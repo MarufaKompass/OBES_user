@@ -10,17 +10,17 @@ export default function HealthCare() {
               {
                 title: "Nutrition Counseling",
                 description: "Personalized dietary plans tailored to your specific health needs and goals.",
-                icon: <HeartPulseIcon className="h-10 w-10 text-[#FE9A00]" />,
+                icon: <HeartPulseIcon className="h-10 w-10 text-[#7b1e19]" />,
               },
               {
                 title: "Weight Management",
                 description: "Evidence-based programs to help you achieve and maintain a healthy weight.",
-                icon: <CheckCircle2Icon className="h-10 w-10 text-[#FE9A00]" />,
+                icon: <CheckCircle2Icon className="h-10 w-10 text-[#7b1e19]" />,
               },
               {
                 title: "Lifestyle Coaching",
                 description: "Guidance on incorporating healthy habits into your daily routine.",
-                icon: <UserIcon className="h-10 w-10 text-[#FE9A00]" />,
+                icon: <UserIcon className="h-10 w-10 text-[#7b1e19]" />,
               },
             ]
 
@@ -51,7 +51,7 @@ export default function HealthCare() {
              <p className="text-gray-500">{service.description}</p>
            </div>
            <div className="mt-4">
-             <button className="text-[#FE9A00] hover:text-[#FE9A00] hover:bg-green-50 text-sm font-medium p-0">
+             <button className="text-[#7b1e19] hover:text-[#7b1e19] hover:bg-green-50 text-[14px] font-medium p-0">
                Learn more →
              </button>
            </div>

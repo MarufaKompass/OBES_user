@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import image from "../../../public/images/auth/registrationBg.jpg";
+import image from "../../../public/images/auth/registrationBg.png";
 import axios from "axios";
 import { useObeContext } from "../../../components/contextAPI/MainContextProvider";
 import { toast } from 'react-toastify';
@@ -17,6 +17,9 @@ export default function Login() {
   } = useForm();
   const handleButtonClick = () => {
     navigate('/');
+  };
+  const handleButtonClickSignUp = () => {
+    navigate('/auth/sign-up');
   };
   const onSubmit = async (data) => {
     console.log(data);
@@ -37,7 +40,7 @@ export default function Login() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8  bg-cover bg-center"
+      className="h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8  bg-cover bg-center"
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
@@ -47,9 +50,9 @@ export default function Login() {
           </h2>
           <p className="mt-2 text-sm text-gray-600 font-serif ">
             don't have an account?{" "}
-            <a href="#" className="font-medium text-[#FE9A00] font-serif ">
+            <button onClick={handleButtonClickSignUp} className="font-medium text-[#7b1e19] font-serif ">
               Sign Up
-            </a>
+            </button>
           </p>
         </div>
 
@@ -101,7 +104,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full font-serif text-[18px] text-[#fff] bg-[#FE9A00] py-[10px] cursor-pointer mt-6"
+            className="w-full font-serif text-[18px] text-[#fff] bg-[#7b1e19] py-[10px] cursor-pointer mt-6"
             style={{ fontFamily: "poppins" }}
           >
             Sign In

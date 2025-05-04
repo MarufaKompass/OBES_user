@@ -4,10 +4,10 @@ export default function HealthSummary({ submitted, setSubmitted, rating }) {
   return (
     <div>
       <div className="bg-white rounded-lg shadow p-6">
-        <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-green-700" style={{fontFamily:'poppins'}}>
+        <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-[#7b1e19]" style={{fontFamily:'poppins'}}>
           {/* Award icon */}
           <svg
-            className="h-5 w-5 text-green-600"
+            className="h-5 w-5 text-[#7b1e19]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ export default function HealthSummary({ submitted, setSubmitted, rating }) {
           <div className="text-center space-y-4">
             <div className="mx-auto h-16 w-16 bg-green-100 rounded-full flex items-center justify-center">
               <svg
-                className="h-8 w-8 text-green-600"
+                className="h-8 w-8 text-[#7b1e19]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ export default function HealthSummary({ submitted, setSubmitted, rating }) {
                 />
               </svg>
             </div>
-            <h3 className="text-xl font-medium text-green-800" style={{fontFamily:'poppins'}}>
+            <h3 className="text-xl font-medium text-[#7b1e19]" style={{fontFamily:'poppins'}}>
               Thank You for Your Review!
             </h3>
             <p className="text-gray-600" style={{fontFamily:'poppins'}}>
@@ -51,7 +51,7 @@ export default function HealthSummary({ submitted, setSubmitted, rating }) {
             </p>
             <button
               onClick={() => setSubmitted(false)}
-              className="mt-4 border border-green-300 text-green-700 px-4 py-2 rounded hover:bg-green-50" style={{fontFamily:'poppins'}}
+              className="mt-4 border border-green-300 text-[#7b1e19] px-4 py-2 rounded hover:bg-green-50" style={{fontFamily:'poppins'}}
             >
               Submit Another Review
             </button>
@@ -59,13 +59,13 @@ export default function HealthSummary({ submitted, setSubmitted, rating }) {
         ) : (
           <div className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="bg-green-50 p-4 rounded-md">
-                <h3 className="text-green-800 font-medium" style={{fontFamily:'poppins'}}>Health Score</h3>
+              <div className="bg-[rgba(123,30,25,0.1)] p-4 rounded-md">
+                <h3 className="text-[#7b1e19] font-medium" style={{fontFamily:'poppins'}}>Health Score</h3>
                 <div className="flex justify-between items-end mt-2">
-                  <span className="text-3xl font-bold text-green-700" style={{fontFamily:'poppins'}}>
+                  <span className="text-3xl font-bold text-[#7b1e19]" style={{fontFamily:'poppins'}}>
                     82/100
                   </span>
-                  <span className="text-sm text-green-600" style={{fontFamily:'poppins'}}>
+                  <span className="text-sm text-[#7b1e19]" style={{fontFamily:'poppins'}}>
                     ↑ 4% from last month
                   </span>
                 </div>

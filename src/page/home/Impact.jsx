@@ -9,7 +9,7 @@ export default function Impact() {
       ]
   return (
     <div>
-      <section className="w-full py-12 md:py-20 lg:py-24 bg-[#ec9f2b] text-white">
+      <section className="w-full py-12 md:py-20 lg:py-24 bg-[#7b1e19] text-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">

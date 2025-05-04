@@ -28,7 +28,7 @@ export default function Blog() {
   <div className="container mx-auto px-4 md:px-6">
     <div className="flex flex-col items-center justify-center space-y-4 text-center">
       <div className="space-y-2">
-        <span className="inline-block rounded-full border border-[#ba7c1e] bg-[#ec9f2b] px-3 py-1 text-sm font-medium text-[#fff]">
+        <span className="inline-block rounded-[100%] border border-[#7b1e19] bg-[#7b1e19] px-6 py-2 text-sm font-medium text-[#fff]">
           Latest Articles
         </span>
         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Health & Wellness Insights</h2>
@@ -59,7 +59,7 @@ export default function Blog() {
             <p className="text-gray-500 text-sm line-clamp-2">{article.description}</p>
           </div>
           <div className="px-4 pb-4">
-            <button className="text-[#ec9f2b] hover:text-[#ec9f2b] hover:bg-green-50 text-sm font-medium">
+            <button className="text-[#7b1e19] hover:text-[#7b1e19] hover:bg-green-50 text-sm font-medium">
               Read more →
             </button>
           </div>
@@ -68,7 +68,7 @@ export default function Blog() {
     </div>
 
     <div className="flex justify-center">
-      <button className="border border-[#ec9f2b] text-[#ec9f2b] px-4 py-2 rounded-md hover:bg-[#fff9ef]">
+      <button className="border border-[#7b1e19] text-[#7b1e19] px-4 py-2 rounded-md hover:bg-[#fff9ef]">
         View All Articles
       </button>
     </div>

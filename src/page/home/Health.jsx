@@ -37,7 +37,7 @@ export default function Health() {
               </li>
             ))}
           </ul>
-          <button className="w-fit px-6 py-3 mt-4 text-white bg-[#FE9A00] rounded-lg shadow-md hover:bg-primary-dark transition-colors" style={{fontFamily:'poppins'}}>
+          <button className="w-fit px-6 py-3 mt-4 text-white bg-[#7b1e19] rounded-lg shadow-md hover:bg-primary-dark transition-colors" style={{fontFamily:'poppins'}}>
             Learn More About Us
           </button>
         </div>

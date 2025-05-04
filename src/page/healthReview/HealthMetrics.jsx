@@ -3,10 +3,10 @@ import React from "react";
 export default function HealthMetrics() {
   return (
     <div className="bg-white rounded-lg shadow p-6 mb-6">
-      <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-green-700" style={{fontFamily:'poppins'}}>
+      <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-[#7b1e19]" style={{fontFamily:'poppins'}}>
         {/* Activity icon */}
         <svg
-          className="h-5 w-5 text-green-600"
+          className="h-5 w-5 text-[#7b1e19]"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -35,13 +35,13 @@ export default function HealthMetrics() {
         },
       ].map((item) => (
         <div className="mb-6" key={item.label}>
-          <div className="flex justify-between text-sm font-medium text-green-700 mb-1" style={{fontFamily:'poppins'}}>
+          <div className="flex justify-between text-sm font-medium text-[#7b1e19] mb-1" style={{fontFamily:'poppins'}}>
             <span>{item.label}</span>
             <span>{item.value}</span>
           </div>
-          <div className="w-full bg-green-100 rounded-full h-2 overflow-hidden" style={{fontFamily:'poppins'}}>
+          <div className="w-full bg-[rgba(123,30,25,0.2)]  rounded-full h-2 overflow-hidden" style={{fontFamily:'poppins'}}>
             <div
-              className="bg-green-500 h-2"
+              className="bg-[#7b1e19] h-2"
               style={{ width: `${item.progress}%` }}
             />
           </div>

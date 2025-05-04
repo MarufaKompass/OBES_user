@@ -10,13 +10,13 @@ export default function HealthReview() {
 
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-b from-green-50 to-blue-50 p-4 md:p-8">
+      <div className="min-h-screen bg-[rgba(123,30,25,0.1)] p-4 md:p-8">
         <div className="mx-auto max-w-4xl">
           <header className="mb-8 text-center">
-            <h1 className="text-3xl font-bold text-green-800 md:text-4xl" style={{fontFamily:'poppins'}}>
+            <h1 className="text-3xl font-bold text-[#7b1e19] md:text-[42px]" style={{fontFamily:'poppins'}}>
               Health Review Portal
             </h1>
-            <p className="mt-2 text-gray-600" style={{fontFamily:'poppins'}}>
+            <p className="mt-2 text-gray-600 text-[16px]" style={{fontFamily:'poppins'}}>
               Track, review, and improve your health journey
             </p>
           </header>
@@ -30,8 +30,8 @@ export default function HealthReview() {
                   onClick={() => setCurrentTab(tab)}
                   className={`py-2 px-4 font-medium border-b-2 ${
                     currentTab === tab
-                      ? "text-green-800 border-green-600"
-                      : "text-gray-500 border-transparent hover:border-green-300"
+                      ? "text-[#7b1e19] border-[#7b1e19]"
+                      : "text-gray-500 border-transparent hover:border-[#7b1e19]"
                   }`}
                 >
                   {tab === "metrics"

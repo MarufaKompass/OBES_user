@@ -8,10 +8,10 @@ export default function ReviewForm({ setRating, setSubmitted, rating }) {
   return (
     <div>
       <div className="bg-white rounded-lg shadow p-6 mb-6">
-        <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-green-700">
+        <div className="mb-4 flex items-center gap-2 text-lg font-semibold text-[#7b1e19]">
           {/* Clipboard icon */}
           <svg
-            className="h-5 w-5 text-green-600"
+            className="h-5 w-5 text-[#7b1e19]"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ export default function ReviewForm({ setRating, setSubmitted, rating }) {
               id="provider"
               type="text"
               placeholder="Dr. Smith / City Hospital"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="w-full border border-[#7b1e19] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7b1e19]"
             />
           </div>
 
@@ -53,7 +53,7 @@ export default function ReviewForm({ setRating, setSubmitted, rating }) {
             <input
               id="date"
               type="date"
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="w-full border border-[#7b1e19] rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7b1e19]"
             />
           </div>
 
@@ -75,7 +75,7 @@ export default function ReviewForm({ setRating, setSubmitted, rating }) {
                   />
                   <label
                     htmlFor={`rating-${value}`}
-                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-gray-300 peer-checked:border-green-500 peer-checked:bg-green-100 text-sm"
+                    className="flex h-12 w-12 cursor-pointer items-center justify-center rounded-full border-2 border-gray-300 peer-checked:border-[#7b1e19] peer-checked:bg-[rgba(123,30,25,0.3)]  text-sm"
                     style={{fontFamily:'poppins'}}
                   >
                     {value}
@@ -99,13 +99,13 @@ export default function ReviewForm({ setRating, setSubmitted, rating }) {
               id="comments"
               rows="4"
               placeholder="Share your experience and any suggestions for improvement..."
-              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#7b1e19]"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition"
+            className="w-full bg-[#7b1e19] text-white py-2 rounded hover:bg-[#7b1e19] transition"
           >
             Submit Review
           </button>
