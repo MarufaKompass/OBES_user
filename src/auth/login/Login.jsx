@@ -50,7 +50,7 @@ export default function Login() {
           </h2>
           <p className="mt-2 text-sm text-gray-600 font-serif ">
             don't have an account?{" "}
-            <button onClick={handleButtonClickSignUp} className="font-medium text-[#7b1e19] font-serif ">
+            <button onClick={handleButtonClickSignUp} className="font-medium text-primary-color font-serif ">
               Sign Up
             </button>
           </p>
@@ -104,7 +104,7 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full font-serif text-[18px] text-[#fff] bg-[#7b1e19] py-[10px] cursor-pointer mt-6"
+            className="w-full font-serif text-[18px] text-[#fff] bg-primary-color py-[10px] cursor-pointer mt-6"
             style={{ fontFamily: "poppins" }}
           >
             Sign In

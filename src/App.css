@@ -1,9 +1,7 @@
 #root {
   font-family: "Roboto", sans-serif;
-  /* max-width: 1280px; */
   margin: 0 auto;
-  /* padding: 2rem; */
-  /* text-align: center; */
+
 }
 
 .logo {
@@ -45,4 +43,16 @@
 .container{
   width:1550px;
   margin: auto;
+}
+
+.text-primary-color{
+  color:#7B1E19
+}
+
+.bg-primary-color{
+  background-color: #7B1E19;
+}
+
+.text-secondary-color{
+  color:#848384;
 }

@@ -8,15 +8,20 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 export default function Registration() {
   const [showPassword, setShowPassword] = useState(false);
-  const [selected, setSelected] = useState("");
+
   const navigate = useNavigate();
   // const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const [selected, setSelected] = useState("user");
   const {
     register,
     handleSubmit,
     control,
     // formState: { errors },
-  } = useForm();
+  } = useForm({
+  });
+
+
+
   const handleButtonClick = () => {
     navigate("/");
   };
@@ -60,7 +65,7 @@ export default function Registration() {
             Already have an account?{" "}
             <button
               onClick={handleButtonClickLogin}
-              className="font-medium text-[#7b1e19] font-serif"
+              className="font-medium text-primary-color font-serif"
             >
               Sign in
             </button>
@@ -188,7 +193,36 @@ export default function Registration() {
                   Type
                 </label>
 
-                <div className="flex items-center justify-center pt-[6px]">
+<div className="flex gap-4 items-center h-12">
+      <label className="flex items-center space-x-2">
+        <input
+          {...register("role", { required: true })}
+          type="radio"
+          name="role"
+          value="user"
+          checked={selected === "user"}
+          onChange={() => setSelected("user")}
+          className="accent-[#7B1E19]"
+        />
+        <span className="text-gray-800">User</span>
+      </label>
+
+      <label className="flex items-center space-x-2">
+        <input
+          {...register("role", { required: true })}
+          type="radio"
+          name="role"
+          value="doctor"
+          checked={selected === "doctor"}
+          onChange={() => setSelected("doctor")}
+          className="accent-[#7B1E19]"
+        />
+        <span className="text-gray-800">Doctor</span>
+      </label>
+    </div>
+
+
+                {/* <div className="flex items-center justify-center pt-[6px]">
                   <div className="relative w-[100%]">
                     <select
                       value={selected}
@@ -202,10 +236,10 @@ export default function Registration() {
                       <option value="user">User</option>
                       <option value="doctor">Doctor</option>
                       
-                    </select>
+                    </select> */}
 
                     {/* Custom arrow icon */}
-                    <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-[#848282]">
+                    {/* <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-[#848282]">
                       <svg
                         className="w-5 h-5"
                         fill="none"
@@ -221,7 +255,10 @@ export default function Registration() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
+
+
+
               </div>
             </div>
 
@@ -280,7 +317,7 @@ export default function Registration() {
 
           <button
             type="submit"
-            className="w-full font-serif text-[18px] text-[#fff] bg-[#7b1e19] py-[10px] cursor-pointer mt-6"
+            className="w-full font-serif text-[18px] text-[#fff] bg-primary-color py-[10px] cursor-pointer mt-6"
           >
             Create Account
           </button>

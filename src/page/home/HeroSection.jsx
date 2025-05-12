@@ -12,10 +12,10 @@ export default function HeroSection() {
       <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
         <div className="flex flex-col justify-center space-y-4">
           <div className="space-y-2">
-            <h1 className="text-[30px] font-extrabold tracking-wide md:text-[40px] xl:text-[44px] text-[#7b1e19] leading-[55px] uppercase" style={{fontFamily:'poppins'}}>
+            <h1 className="text-[30px] font-bold tracking-wide md:text-[40px] xl:text-[44px] text-[#7b1e19] leading-[55px] uppercase" >
               Your Health Is Our <br></br> Top Priority
             </h1>
-            <p className="max-w-[600px] text-gray-600 md:text-[16px] font-normal mt-6" style={{fontFamily:'poppins'}}>
+            <p className="max-w-[600px] text-secondary-color md:text-[16px] font-normal mt-6" >
               Providing exceptional healthcare services with compassion and expertise. Schedule your appointment today.
             </p>
           </div>
