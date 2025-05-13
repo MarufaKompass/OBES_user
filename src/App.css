@@ -52,7 +52,15 @@
 .bg-primary-color{
   background-color: #7B1E19;
 }
+.bg-secondary-color{
+  background-color: #a82922;
+}
 
 .text-secondary-color{
   color:#848384;
+}
+
+.bg-disable-color{
+   background-color: #bfbebe;
+   color:#333
 }
