@@ -38,9 +38,7 @@ export default function HeroSection() {
         <img
           src={heroSection}
           alt="Healthcare professionals"
-          width={550}
-          height={550}
-          className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+          className=" "
         />
       </div>
     </div>
