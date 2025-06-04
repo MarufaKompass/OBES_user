@@ -4,41 +4,41 @@ import { toast } from "react-toastify";
 
 import image from "../../../public/images/auth/registrationBg.png";
 import { useObeContext } from "../../../components/contextAPI/MainContextProvider";
-import { useLogin } from "../hooks/AuthPostsRQ";
+import { loginUser } from "../hooks/AuthPostsRQ";
 import Loader from "../../components/loader/Loader";
 import { useAppNavigation } from "../../components/dynamicNavigation/useAppNavigation";
+import { useMutation } from "@tanstack/react-query";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { setUser } = useObeContext();
   const { handleNavigation } = useAppNavigation();
-  const { mutate, inPending, isSuccess, isError, error } = useLogin();
   const {
     register,
     handleSubmit,
     reset,
     // formState: { errors },
   } = useForm();  
-
-  const onSubmit = async (data) => {
-    mutate(data, {
-      onSuccess: (res) => {
-        sessionStorage.setItem("token", JSON.stringify(res?.token));
-        setUser(res.data.token);
-        toast.success(res?.data?.message || "Login successful!");
-        handleNavigation("/");
-        reset();
-      },
-      onError: (err) => {
-        toast.error(err?.response?.data?.message || "Login failed");
-        reset();
-      },
-    });
-  };
+  
+const { mutateAsync, error, isPending, isError, isSuccess } = useMutation(loginUser)
+const onSubmit = async (data) => {
+  try {
+    const res = await mutateAsync(data);
+    console.log("res" , res)
+    sessionStorage.setItem("token", JSON.stringify(res?.token));
+    setUser(res.data.token);
+    toast.success(res?.data?.message || "Login successful!");
+    handleNavigation("/");
+    reset();
+  } catch (err) {
+    toast.error(err?.response?.data?.message || "Login failed");
+    reset();
+  }
+};
 
   return (
     <>
-      {inPending ? (
+      {isPending ? (
         <>
           <Loader></Loader>
         </>

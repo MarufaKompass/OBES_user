@@ -12,13 +12,8 @@ export const useRegister = () => {
   });
 };
 
-const loginUser = async (loginData) => {
- const response = await axios.post('https://obapi.myhealthrow.com/public/api/login', loginData);
+export const loginUser = async (loginData) => {
+ const response = await axios.post('https://api.obesitybes.com/public/api/login', loginData);
   return response.data;
 }
 
-export const useLogin = () => {
-   return useMutation({
-    mutationFn:loginUser
-  })
-}

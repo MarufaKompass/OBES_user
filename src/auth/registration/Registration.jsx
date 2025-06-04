@@ -24,12 +24,6 @@ export default function Registration() {
 
   const { mutate, isPending, isSuccess, isError, error } = useRegister();
 
-  const handleButtonClick = () => {
-    navigate("/");
-  };
-  const handleButtonClickLogin = () => {
-    navigate("/auth/sign-in");
-  };
 
   const onSubmit = async (data) => {
     const formattedDob = dayjs(data.dob).format("YYYY-MM-DD");
