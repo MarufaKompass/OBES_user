@@ -6,13 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import {store} from './app/store';
 import { Provider } from 'react-redux'
 import SuspenseContent from './containers/SuspenseContent';
-
+import { ToastContainer } from 'react-toastify';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
     <Suspense fallback={<SuspenseContent />}>
         <Provider store={store}>
             <App />
+              <ToastContainer />
         </Provider>
     </Suspense>
   // </React.StrictMode>

@@ -5,13 +5,16 @@ import useNavigator from "../../hooks/useNavigator";
 import { useEffect, useState } from "react";
 import { useRegisterMutation } from "../../features/auth/authApi";
 import DatePicker from "../../components/datepicker/Datepicker";
+import { toast } from 'react-toastify';
+
 function Register() {
   const { handleNavigation } = useNavigator();
   const [selected, setSelected] = useState("user");
   const [showPassword, setShowPassword] = useState(false);
   const [smsNumber, setSmsNumber] = useState(null);
-  console.log("New value for smsNumber (within handler):", smsNumber);
 
+
+  
 const handleSmsNumber = (e) => {
   const newValue = e.target.value;
   setSmsNumber(newValue);
@@ -30,8 +33,9 @@ const handleSmsNumber = (e) => {
     if (resError?.data) {
       setError(resError.data);
     }
-    if (data?.data?.access?.token && data?.data?.user) {
+    if (data?.data?.token && data?.data?.user) {
       handleNavigation("/");
+       toast.success("successfully! Sign Up ");
 
     }
   }, [data, handleNavigation, resError]);
@@ -116,12 +120,12 @@ const handleSmsNumber = (e) => {
                         Mobile Number
                       </label>
                       <input
-                        onBlur={handleSmsNumber}
                         name="logmobile"
                         type="number"
                         autoComplete="logmobile"
                         placeholder="Mobile Number"
                         {...register("logmobile", { required: true })}
+                        onChange={handleSmsNumber}
                         className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
                       />
                       {/* {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>} */}
@@ -130,8 +134,9 @@ const handleSmsNumber = (e) => {
                 </div>
 
 
-
-                <div>
+{
+  smsNumber && (
+  <div>
                   <label
                     className="font-poppins  text-[14px]"
                   >
@@ -149,23 +154,10 @@ const handleSmsNumber = (e) => {
                   {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
                 </div>
 
+  )
+}
+              
 
-                <div>
-                  <label
-                    className="font-poppins  text-[14px]"
-                  >
-                  Email Address
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    {...register(" logemail", { required: true })}
-                    className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
-                  />
-
-                </div>
 
                 <div>
                   <label
@@ -176,7 +168,8 @@ const handleSmsNumber = (e) => {
 
          <div>
                    <select defaultValue="choose gender" 
-                   className="select border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-none w-[100%]">
+                     {...register("ogender", { required: true })}
+                     className="select border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-none w-[100%]">
                     <option disabled={true}>Pick a color</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -188,8 +181,7 @@ const handleSmsNumber = (e) => {
 
                 <div>
                   <label
-                    className="font-serif  text-[14px]"
-                    style={{ fontFamily: "poppins" }}
+                    className="font-poppins  text-[14px]"
                   >
                     Email address
                   </label>
@@ -207,8 +199,7 @@ const handleSmsNumber = (e) => {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label
-                      className="font-serif  text-[14px]"
-                      style={{ fontFamily: "poppins" }}
+                      className="font-poppins  text-[14px]"
                     >
                       Date Of Birth
                     </label>
