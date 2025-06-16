@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
@@ -9,10 +8,9 @@ import { useEffect, useState } from "react";
 import { useLoginMutation } from "../../features/auth/authApi";
 import { userLoggedIn } from "../../features/auth/authSlice";
 
-
 function Login() {
-  const {handleNavigation} = useNavigator();
- const dispatch = useDispatch();
+  const { handleNavigation } = useNavigator();
+  const dispatch = useDispatch();
   const [error, setError] = useState("");
   const {
     register,
@@ -21,11 +19,9 @@ function Login() {
     // formState: { errors },
   } = useForm();
 
-
   const [resLogin, { data, isLoading, error: loginError }] = useLoginMutation();
 
-  console.log('data', data?.token)
-
+  console.log("data", data?.token);
 
   useEffect(() => {
     if (data?.token) {
@@ -34,22 +30,14 @@ function Login() {
     }
   }, [data, dispatch]);
 
-
-
   const onSubmit = (formData) => {
     setError("");
     resLogin({
       login: formData.login,
       password: formData.password,
     });
-
   };
 
-
-
-
-
-  // };
   return (
     <div className="min-h-screen bg-base-200 flex items-center">
       <div className="card mx-auto w-full max-w-5xl  shadow-xl">
@@ -65,7 +53,7 @@ function Login() {
                   <p className="font-serif  text-[16px] mb-1">Mobile Number*</p>
                   <input
                     type=""
-                    name='login'
+                    name="login"
                     {...register("login")}
                     placeholder="Mobile Number"
                     className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
@@ -74,11 +62,11 @@ function Login() {
                 <div>
                   <p className="font-serif  text-[16px] mb-1">Password*</p>
                   <input
-                  name="password"
+                    name="password"
                     {...register("password")}
                     placeholder="Password"
                     type="password"
-                     className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
+                    className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
                   />
                 </div>
               </div>
@@ -103,7 +91,7 @@ function Login() {
               <div className="text-center mt-4">
                 Don't have an account yet?{" "}
                 <Link to="/register">
-                  <span className="  inline-block  hover:text-primary hover:underline hover:cursor-pointer transition duration-200">
+                  <span className="  inline-block  text-[#7B1E19] underline hover:cursor-pointer transition duration-200">
                     Register
                   </span>
                 </Link>
