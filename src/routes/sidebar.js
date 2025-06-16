@@ -31,33 +31,29 @@ const routes = [
   },
   {
     path: '/leads', // url
-    icon: <InboxArrowDownIcon className={iconClasses}/>, // icon component
-    name: 'Leads', // name that appear in Sidebar
+    icon: <InboxArrowDownIcon className={iconClasses}/>, 
+    name: 'Leads', 
   },
-  {
-    path: '/transactions', // url
-    icon: <CurrencyDollarIcon className={iconClasses}/>, // icon component
-    name: 'Transactions', // name that appear in Sidebar
-  },
+
   {
     path: '/charts', // url
-    icon: <ChartBarIcon className={iconClasses}/>, // icon component
+    icon: <ChartBarIcon className={iconClasses}/>, 
     name: 'Analytics', // name that appear in Sidebar
   },
   {
     path: '/integration', // url
-    icon: <BoltIcon className={iconClasses}/>, // icon component
+    icon: <BoltIcon className={iconClasses}/>, 
     name: 'Integration', // name that appear in Sidebar
   },
   {
     path: '/calendar', // url
-    icon: <CalendarDaysIcon className={iconClasses}/>, // icon component
-    name: 'Calendar', // name that appear in Sidebar
+    icon: <CalendarDaysIcon className={iconClasses}/>, 
+    name: 'Calendar', 
   },
 
   {
-    path: '', //no url needed as this has submenu
-    icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, // icon component
+    path: 'pages', //no url needed as this has submenu
+    icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, 
     name: 'Pages', // name that appear in Sidebar
     submenu : [
       {
@@ -67,9 +63,14 @@ const routes = [
       },
       {
         path: '/register', //url
-        icon: <UserIcon className={submenuIconClasses}/>, // icon component
-        name: 'Register', // name that appear in Sidebar
+        icon: <UserIcon className={submenuIconClasses}/>, 
+        name: 'Register', 
       },
+        {
+    path: '/pages/transactions', // url
+    icon: <CurrencyDollarIcon className={iconClasses}/>, 
+    name: 'Transactions', // name that appear in Sidebar
+  },
       {
         path: '/forgot-password',
         icon: <KeyIcon className={submenuIconClasses}/>,

@@ -1,11 +1,19 @@
 
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 import LandingIntro from "./LandingIntro";
+import useNavigator from "../../hooks/useNavigator";
+import { useEffect, useState } from "react";
+import { useLoginMutation } from "../../features/auth/authApi";
+import { userLoggedIn } from "../../features/auth/authSlice";
 
 
 function Login() {
+  const {handleNavigation} = useNavigator();
+ const dispatch = useDispatch();
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
@@ -14,22 +22,34 @@ function Login() {
   } = useForm();
 
 
-  // const { mutateAsync, error, isPending, isError, isSuccess } = useMutation(loginUser)
-  const onSubmit = async (data) => {
-    console.log("login user", data);
-    //   try {
-    //     const res = await mutateAsync(data);
-    //     console.log("res" , res)
-    //     sessionStorage.setItem("token", JSON.stringify(res?.token));
-    //     setUser(res.data.token);
-    //     toast.success(res?.data?.message || "Login successful!");
-    //     handleNavigation("/");
-    //     reset();
-    //   } catch (err) {
-    //     toast.error(err?.response?.data?.message || "Login failed");
-    //     reset();
-    //   }
+  const [resLogin, { data, isLoading, error: loginError }] = useLoginMutation();
+
+  console.log('data', data?.token)
+
+
+  useEffect(() => {
+    if (data?.token) {
+      dispatch(userLoggedIn());
+      handleNavigation("/");
+    }
+  }, [data, dispatch]);
+
+
+
+  const onSubmit = (formData) => {
+    setError("");
+    resLogin({
+      login: formData.login,
+      password: formData.password,
+    });
+
   };
+
+
+
+
+
+  // };
   return (
     <div className="min-h-screen bg-base-200 flex items-center">
       <div className="card mx-auto w-full max-w-5xl  shadow-xl">
@@ -44,7 +64,8 @@ function Login() {
                 <div className="mb-3">
                   <p className="font-serif  text-[16px] mb-1">Mobile Number*</p>
                   <input
-                    type="text"
+                    type=""
+                    name='login'
                     {...register("login")}
                     placeholder="Mobile Number"
                     className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
@@ -53,6 +74,7 @@ function Login() {
                 <div>
                   <p className="font-serif  text-[16px] mb-1">Password*</p>
                   <input
+                  name="password"
                     {...register("password")}
                     placeholder="Password"
                     type="password"
