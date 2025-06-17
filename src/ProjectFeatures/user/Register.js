@@ -33,8 +33,8 @@ const handleSmsNumber = (e) => {
     if (resError?.data) {
       setError(resError.data);
     }
-    if (data?.data?.token && data?.data?.user) {
-      handleNavigation("/");
+    if (data?.token) {
+       handleNavigation("/");
        toast.success("successfully! Sign Up ");
 
     }
@@ -51,7 +51,7 @@ const handleSmsNumber = (e) => {
     console.log('data', formData)
     setError("");
     resRegister({
-      ccode: formData.fulname,
+      fulname: formData.fulname,
       ogender: formData.ogender,
       dob: formData.dob,
       ccode: formData.ccode,
