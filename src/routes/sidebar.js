@@ -52,24 +52,15 @@ const routes = [
   },
 
   {
-    path: 'pages', //no url needed as this has submenu
+    path: 'obes', //no url needed as this has submenu
     icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, 
-    name: 'Pages', // name that appear in Sidebar
+    name: 'OBES School', // name that appear in Sidebar
     submenu : [
-      {
-        path: '/login',
-        icon: <ArrowRightOnRectangleIcon className={submenuIconClasses}/>,
-        name: 'Login',
-      },
-      {
-        path: '/register', //url
-        icon: <UserIcon className={submenuIconClasses}/>, 
-        name: 'Register', 
-      },
+     
         {
-    path: '/pages/transactions', // url
+    path: '/obes/diet', // url
     icon: <CurrencyDollarIcon className={iconClasses}/>, 
-    name: 'Transactions', // name that appear in Sidebar
+    name: 'Diet Plan', // name that appear in Sidebar
   },
       {
         path: '/forgot-password',

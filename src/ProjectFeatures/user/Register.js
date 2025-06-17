@@ -236,9 +236,9 @@ const handleSmsNumber = (e) => {
                           value="user"
                           checked={selected === "user"}
                           onChange={() => setSelected("user")}
-                          className="accent-[#7B1E19]"
+                          className="accent-primary"
                         />
-                        <span className="text-[#161616]">User</span>
+                        <span className="">User</span>
                       </label>
 
                       <label className="flex items-center space-x-2">
@@ -249,9 +249,9 @@ const handleSmsNumber = (e) => {
                           value="doctor"
                           checked={selected === "doctor"}
                           onChange={() => setSelected("doctor")}
-                          className="accent-[#7B1E19]"
+                          className="accent-primary"
                         />
-                        <span className="text-[#161616]">Doctor</span>
+                        <span className="">Doctor</span>
                       </label>
                     </div>
                   </div>
@@ -297,17 +297,17 @@ const handleSmsNumber = (e) => {
 
               <button
                 type="submit"
-                className="w-full font-serif text-[18px] text-[#fff] bg-[#7B1E19] py-[10px] cursor-pointer mt-6 rounded-[8px]"
+                className="w-full font-serif text-[18px] text-[#fff] bg-primary py-[10px] cursor-pointer mt-6 rounded-[8px]"
               >
                 Create Account
               </button>
             </form>
 
             <div className="ml-3 text-sm flex justify-center mt-3">
-              <label className="font-medium  text-[#161616] font-serif ">
+              <label className="font-medium   font-serif ">
                 Do you have an Account
                 <Link to="/login"> {" "}
-                  <span className="  inline-block  text-[#7B1E19] underline hover:cursor-pointer transition duration-200">
+                  <span className="  inline-block  text-primary underline hover:cursor-pointer transition duration-200">
                     Login
                   </span>
                 </Link>

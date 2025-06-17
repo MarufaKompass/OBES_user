@@ -54,7 +54,7 @@ const TopSideButtons = ({removeFilter, applyFilter, applySearch}) => {
 }
 
 
-function Transactions(){
+function Diet(){
 
 
     const [trans, setTrans] = useState(RECENT_TRANSACTIONS)
@@ -125,4 +125,4 @@ function Transactions(){
 }
 
 
-export default Transactions
+export default Diet;
