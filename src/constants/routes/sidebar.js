@@ -1,131 +1,122 @@
 /** Icons are imported separatly to reduce build time */
-import BellIcon from '@heroicons/react/24/outline/BellIcon'
-import DocumentTextIcon from '@heroicons/react/24/outline/DocumentTextIcon'
-import Squares2X2Icon from '@heroicons/react/24/outline/Squares2X2Icon'
-import TableCellsIcon from '@heroicons/react/24/outline/TableCellsIcon'
-import WalletIcon from '@heroicons/react/24/outline/WalletIcon'
-import CodeBracketSquareIcon from '@heroicons/react/24/outline/CodeBracketSquareIcon'
-import DocumentIcon from '@heroicons/react/24/outline/DocumentIcon'
-import ExclamationTriangleIcon from '@heroicons/react/24/outline/ExclamationTriangleIcon'
-import CalendarDaysIcon from '@heroicons/react/24/outline/CalendarDaysIcon'
-import ArrowRightOnRectangleIcon from '@heroicons/react/24/outline/ArrowRightOnRectangleIcon'
-import UserIcon from '@heroicons/react/24/outline/UserIcon'
-import Cog6ToothIcon from '@heroicons/react/24/outline/Cog6ToothIcon'
-import BoltIcon from '@heroicons/react/24/outline/BoltIcon'
-import ChartBarIcon from '@heroicons/react/24/outline/ChartBarIcon'
-import CurrencyDollarIcon from '@heroicons/react/24/outline/CurrencyDollarIcon'
-import InboxArrowDownIcon from '@heroicons/react/24/outline/InboxArrowDownIcon'
-import UsersIcon from '@heroicons/react/24/outline/UsersIcon'
-import KeyIcon from '@heroicons/react/24/outline/KeyIcon'
-import DocumentDuplicateIcon from '@heroicons/react/24/outline/DocumentDuplicateIcon'
+import DocumentTextIcon from "@heroicons/react/24/outline/DocumentTextIcon";
+import Squares2X2Icon from "@heroicons/react/24/outline/Squares2X2Icon";
+import TableCellsIcon from "@heroicons/react/24/outline/TableCellsIcon";
+import WalletIcon from "@heroicons/react/24/outline/WalletIcon";
+import CodeBracketSquareIcon from "@heroicons/react/24/outline/CodeBracketSquareIcon";
+import CalendarDaysIcon from "@heroicons/react/24/outline/CalendarDaysIcon";
+import UserIcon from "@heroicons/react/24/outline/UserIcon";
+import Cog6ToothIcon from "@heroicons/react/24/outline/Cog6ToothIcon";
+import BoltIcon from "@heroicons/react/24/outline/BoltIcon";
+import ChartBarIcon from "@heroicons/react/24/outline/ChartBarIcon";
+import CurrencyDollarIcon from "@heroicons/react/24/outline/CurrencyDollarIcon";
+import InboxArrowDownIcon from "@heroicons/react/24/outline/InboxArrowDownIcon";
+import UsersIcon from "@heroicons/react/24/outline/UsersIcon";
+import DocumentDuplicateIcon from "@heroicons/react/24/outline/DocumentDuplicateIcon";
 
-const iconClasses = `h-6 w-6`
-const submenuIconClasses = `h-5 w-5`
+const iconClasses = `h-6 w-6`;
+const submenuIconClasses = `h-5 w-5`;
 
 const routes = [
-
   {
-    path: '/',
-    icon: <Squares2X2Icon className={iconClasses}/>, 
-    name: 'Dashboard',
+    path: "/",
+    icon: <Squares2X2Icon className={iconClasses} />,
+    name: "Dashboard",
   },
   {
-    path: '/leads', // url
-    icon: <InboxArrowDownIcon className={iconClasses}/>, 
-    name: 'Leads', 
-  },
-
-  {
-    path: '/charts', // url
-    icon: <ChartBarIcon className={iconClasses}/>, 
-    name: 'Analytics', // name that appear in Sidebar
-  },
-  {
-    path: '/integration', // url
-    icon: <BoltIcon className={iconClasses}/>, 
-    name: 'Integration', // name that appear in Sidebar
-  },
-  {
-    path: '/calendar', // url
-    icon: <CalendarDaysIcon className={iconClasses}/>, 
-    name: 'Calendar', 
+    path: "/leads",
+    icon: <InboxArrowDownIcon className={iconClasses} />,
+    name: "Leads",
   },
 
   {
-    path: 'obes', //no url needed as this has submenu
-    icon: <DocumentDuplicateIcon className={`${iconClasses} inline` }/>, 
-    name: 'OBES School', // name that appear in Sidebar
-    submenu : [
-     
-        {
-    path: '/obes/diet', // url
-    icon: <CurrencyDollarIcon className={iconClasses}/>, 
-    name: 'Diet Plan', // name that appear in Sidebar
-  },
-      {
-        path: '/forgot-password',
-        icon: <KeyIcon className={submenuIconClasses}/>,
-        name: 'Forgot Password',
-      },
-      {
-        path: '/blank',
-        icon: <DocumentIcon className={submenuIconClasses}/>,
-        name: 'Blank Page',
-      },
-      {
-        path: '/404',
-        icon: <ExclamationTriangleIcon className={submenuIconClasses}/>,
-        name: '404',
-      },
-    ]
+    path: "/charts",
+    icon: <ChartBarIcon className={iconClasses} />,
+    name: "Analytics",
   },
   {
-    path: '', //no url needed as this has submenu
-    icon: <Cog6ToothIcon className={`${iconClasses} inline` }/>, // icon component
-    name: 'Settings', // name that appear in Sidebar
-    submenu : [
-      {
-        path: '/settings-profile', //url
-        icon: <UserIcon className={submenuIconClasses}/>, // icon component
-        name: 'Profile', // name that appear in Sidebar
-      },
-      {
-        path: '/settings-billing',
-        icon: <WalletIcon className={submenuIconClasses}/>,
-        name: 'Billing',
-      },
-      {
-        path: '/settings-team', // url
-        icon: <UsersIcon className={submenuIconClasses}/>, // icon component
-        name: 'Team Members', // name that appear in Sidebar
-      },
-    ]
+    path: "/integration",
+    icon: <BoltIcon className={iconClasses} />,
+    name: "Integration",
   },
   {
-    path: '', //no url needed as this has submenu
-    icon: <DocumentTextIcon className={`${iconClasses} inline` }/>, // icon component
-    name: 'Documentation', // name that appear in Sidebar
-    submenu : [
-      {
-        path: '/app/getting-started', // url
-        icon: <DocumentTextIcon className={submenuIconClasses}/>, // icon component
-        name: 'Getting Started', // name that appear in Sidebar
-      },
-      {
-        path: '/app/features',
-        icon: <TableCellsIcon className={submenuIconClasses}/>, 
-        name: 'Features',
-      },
-      {
-        path: '/app/components',
-        icon: <CodeBracketSquareIcon className={submenuIconClasses}/>, 
-        name: 'Components',
-      }
-    ]
+    path: "/calendar",
+    icon: <CalendarDaysIcon className={iconClasses} />,
+    name: "Calendar",
   },
-  
-]
 
-export default routes
+  {
+    path: "obes",
+    icon: <DocumentDuplicateIcon className={`${iconClasses} inline`} />,
+    name: "OBES School",
+    submenu: [
+      {
+        path: "/obes/dietPlan",
+        icon: <CurrencyDollarIcon className={iconClasses} />,
+        name: "Diet Plan",
+      },
 
+      {
+        path: "/obes/exerciseRoutine",
+        icon: <CurrencyDollarIcon className={iconClasses} />,
+        name: "Exercise Routine",
+      },
+       {
+        path: "/obes/dailyTrack",
+        icon: <CurrencyDollarIcon className={iconClasses} />,
+        name: "Daily Track",
+      },
+       {
+        path: "/obes/videos",
+        icon: <CurrencyDollarIcon className={iconClasses} />,
+        name: "Videos",
+      },
+    ],
+  },
+  {
+    path: "",
+    icon: <Cog6ToothIcon className={`${iconClasses} inline`} />,
+    name: "Settings",
+    submenu: [
+      {
+        path: "/settings-profile",
+        icon: <UserIcon className={submenuIconClasses} />,
+        name: "Profile",
+      },
+      {
+        path: "/settings-billing",
+        icon: <WalletIcon className={submenuIconClasses} />,
+        name: "Billing",
+      },
+      {
+        path: "/settings-team", // url
+        icon: <UsersIcon className={submenuIconClasses} />,
+        name: "Team Members",
+      },
+    ],
+  },
+  {
+    path: "",
+    icon: <DocumentTextIcon className={`${iconClasses} inline`} />,
+    name: "Documentation",
+    submenu: [
+      {
+        path: "/app/getting-started",
+        icon: <DocumentTextIcon className={submenuIconClasses} />,
+        name: "Getting Started",
+      },
+      {
+        path: "/app/features",
+        icon: <TableCellsIcon className={submenuIconClasses} />,
+        name: "Features",
+      },
+      {
+        path: "/app/components",
+        icon: <CodeBracketSquareIcon className={submenuIconClasses} />,
+        name: "Components",
+      },
+    ],
+  },
+];
 
+export default routes;

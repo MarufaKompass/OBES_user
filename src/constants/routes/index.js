@@ -10,7 +10,10 @@ const Leads = lazy(() => import("../../pages/obes/protected/Leads"));
 const Integration = lazy(() => import("../../pages/obes/protected/Integration"));
 const Calendar = lazy(() => import("../../pages/obes/protected/Calendar"));
 const Team = lazy(() => import("../../pages/obes/protected/Team"));
-const Diet = lazy(() => import("../../pages/obes/protected/Diet"));
+const DietPlan = lazy(() => import("../../pages/obes/protected/DietPlan"));
+const ExerciseRoutine = lazy(() => import("../../pages/obes/protected/ExerciseRoutine"));
+const DailyTrack  = lazy(() => import("../../pages/obes/protected/DailyTrack"));
+const ObesVideos = lazy(() => import("../../pages/obes/protected/ObesVideos"));
 const Bills = lazy(() => import("../../pages/obes/protected/Bills"));
 const ProfileSettings = lazy(() => import("../../pages/obes/protected/ProfileSettings"));
 const GettingStarted = lazy(() => import("../../pages/obes/GettingStarted"));
@@ -38,10 +41,30 @@ const routes = [
     path: "/calendar",
     component: Calendar,
   },
+
+
+
+  
   {
-    path: "obes/diet",
-    component: Diet,
+    path: "obes/dietPlan",
+    component: DietPlan,
   },
+
+  {
+    path: "obes/exerciseRoutine",
+    component: ExerciseRoutine,
+  },
+  {
+    path: "obes/dailyTrack",
+    component: DailyTrack,
+  },
+
+  {
+    path: "obes/videos",
+    component: ObesVideos,
+  },
+
+
   {
     path: "/settings-profile",
     component: ProfileSettings,
