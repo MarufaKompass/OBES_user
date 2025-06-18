@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../ProjectFeatures/common/headerSlice';
-import Diet from '../../ProjectFeatures/diet';
+import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice';
+import Diet from '../../../ProjectFeatures/diet';
 
 
 function InternalPage() {

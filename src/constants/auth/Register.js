@@ -1,13 +1,13 @@
 import {useState, useRef} from 'react'
 import {Link} from 'react-router-dom'
-import DocGettingStarted from '../ProjectFeatures/documentation/DocGettingStarted'
+import Register from '../../ProjectFeatures/user/Register'
 
 function ExternalPage(){
 
 
     return(
         <div className="">
-            <DocGettingStarted />
+                <Register />
         </div>
     )
 }

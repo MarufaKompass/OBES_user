@@ -1,18 +1,18 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import Charts from '../../ProjectFeatures/charts'
-import { setPageTitle } from '../../ProjectFeatures/common/headerSlice'
+import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
+import Team from '../../../ProjectFeatures/settings/team'
 
 function InternalPage(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title : "Analytics"}))
+        dispatch(setPageTitle({ title : "Team Members"}))
       }, [])
 
 
     return(
-        <Charts />
+        <Team/>
     )
 }
 

@@ -5,7 +5,7 @@ import useNavigator from "../../hooks/useNavigator";
 import { useEffect, useState } from "react";
 import { useRegisterMutation } from "../../features/auth/authApi";
 import DatePicker from "../../components/datepicker/Datepicker";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 function Register() {
   const { handleNavigation } = useNavigator();
@@ -13,16 +13,10 @@ function Register() {
   const [showPassword, setShowPassword] = useState(false);
   const [smsNumber, setSmsNumber] = useState(null);
 
-
-  
-const handleSmsNumber = (e) => {
-  const newValue = e.target.value;
-  setSmsNumber(newValue);
-
-};
-
-
-
+  const handleSmsNumber = (e) => {
+    const newValue = e.target.value;
+    setSmsNumber(newValue);
+  };
 
   const [error, setError] = useState("");
   const [showCalendar, setShowCalendar] = useState(false);
@@ -34,9 +28,8 @@ const handleSmsNumber = (e) => {
       setError(resError.data);
     }
     if (data?.token) {
-       handleNavigation("/");
-       toast.success("successfully! Sign Up ");
-
+      handleNavigation("/");
+      toast.success("successfully! Sign Up ");
     }
   }, [data, handleNavigation, resError]);
 
@@ -48,7 +41,7 @@ const handleSmsNumber = (e) => {
   } = useForm();
 
   const onSubmit = (formData) => {
-    console.log('data', formData)
+    console.log("data", formData);
     setError("");
     resRegister({
       fulname: formData.fulname,
@@ -64,7 +57,7 @@ const handleSmsNumber = (e) => {
   };
 
   return (
-    <div className="min-h-screen bg-base-200 flex items-center" >
+    <div className="min-h-screen bg-base-200 flex items-center">
       <div className="card mx-auto w-full max-w-7xl  shadow-xl">
         <div className="grid  md:grid-cols-2 grid-cols-1  bg-base-100 rounded-xl">
           <div className="">
@@ -77,11 +70,7 @@ const handleSmsNumber = (e) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-4">
                 <div>
-                  <label
-                    className="font-poppins  text-[14px]"
-                  >
-                    Full Name
-                  </label>
+                  <label className="font-poppins  text-[14px]">Full Name</label>
                   <input
                     name="fulname"
                     type="text"
@@ -95,11 +84,7 @@ const handleSmsNumber = (e) => {
                   <div>
                     {" "}
                     <div>
-                      <label
-                        className="font-poppins  text-[14px]"
-                      >
-                        Code
-                      </label>
+                      <label className="font-poppins  text-[14px]">Code</label>
 
                       <input
                         name="ccode"
@@ -114,9 +99,7 @@ const handleSmsNumber = (e) => {
                   <div className="col-span-3">
                     {" "}
                     <div>
-                      <label
-                        className="font-poppins  text-[14px]"
-                      >
+                      <label className="font-poppins  text-[14px]">
                         Mobile Number
                       </label>
                       <input
@@ -133,56 +116,45 @@ const handleSmsNumber = (e) => {
                   </div>
                 </div>
 
-
-{
-  smsNumber && (
-  <div>
-                  <label
-                    className="font-poppins  text-[14px]"
-                  >
-                    sms Number
-                  </label>
-                  <input
-                    value={smsNumber} 
-                    name="smsmobile"
-                    type="number"
-                    autoComplete="smsmobile"
-                    placeholder="Mobile Number"
-                    {...register("smsmobile", { required: true })}
-                    className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
-                  />
-                  {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
-                </div>
-
-  )
-}
-              
-
+                {smsNumber && (
+                  <div>
+                    <label className="font-poppins  text-[14px]">
+                      sms Number
+                    </label>
+                    <input
+                      value={smsNumber}
+                      name="smsmobile"
+                      type="number"
+                      autoComplete="smsmobile"
+                      placeholder="Mobile Number"
+                      {...register("smsmobile", { required: true })}
+                      className="input border-[#d8d8d8] focus:outline-none focus:ring-0 w-[100%]"
+                    />
+                    {/* {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>} */}
+                  </div>
+                )}
 
                 <div>
-                  <label
-                    className=" text-[14px] font-poppins"
-                  >
+                  <label className=" text-[14px] font-poppins">
                     Choose Gender
                   </label>
 
-         <div>
-                   <select defaultValue="choose gender" 
-                     {...register("ogender", { required: true })}
-                     className="select border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-none w-[100%]">
-                    <option disabled={true}>Pick a color</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="others">Others</option>
-                  </select>
-         </div>
-
+                  <div>
+                    <select
+                      defaultValue="choose gender"
+                      {...register("ogender", { required: true })}
+                      className="select border border-gray-300 rounded-md px-2 py-1 focus:outline-none focus:ring-2 focus:ring-none w-[100%]"
+                    >
+                      <option disabled={true}>Pick a color</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="others">Others</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
-                  <label
-                    className="font-poppins  text-[14px]"
-                  >
+                  <label className="font-poppins  text-[14px]">
                     Email address
                   </label>
                   <input
@@ -198,9 +170,7 @@ const handleSmsNumber = (e) => {
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label
-                      className="font-poppins  text-[14px]"
-                    >
+                    <label className="font-poppins  text-[14px]">
                       Date Of Birth
                     </label>
                     <Controller
@@ -209,12 +179,12 @@ const handleSmsNumber = (e) => {
                       rules={{ required: true }}
                       render={({ field }) => (
                         <DatePicker
-                          showCalendar={showCalendar} setShowCalendar={setShowCalendar}
+                          showCalendar={showCalendar}
+                          setShowCalendar={setShowCalendar}
                           {...field}
                           value={field.value}
                           onChange={(date) => field.onChange(date)}
                           format="YYYY-MM-DD"
-
                         />
                       )}
                     />
@@ -288,11 +258,6 @@ const handleSmsNumber = (e) => {
                   </div>
                   {/* {errors.password && <p className="mt-1 text-sm text-red-500">{errors.password}</p>} */}
                 </div>
-
-
-
-
-
               </div>
 
               <button
@@ -306,7 +271,8 @@ const handleSmsNumber = (e) => {
             <div className="ml-3 text-sm flex justify-center mt-3">
               <label className="font-medium   font-serif ">
                 Do you have an Account
-                <Link to="/login"> {" "}
+                <Link to="/login">
+                  {" "}
                   <span className="  inline-block  text-primary underline hover:cursor-pointer transition duration-200">
                     Login
                   </span>
