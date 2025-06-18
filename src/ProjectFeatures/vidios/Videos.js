@@ -24,7 +24,7 @@ const TopSideButtons = () => {
 
 function Videos(){
 
-    const {leads } = useSelector(state => state.lead)
+    // const {leads } = useSelector(state => state.lead)
     const dispatch = useDispatch()
 
  
@@ -61,7 +61,7 @@ function Videos(){
                     </tr>
                     </thead>
                     <tbody>
-                        {
+                        {/* {
                             leads.map((l, k) => {
                                 return(
                                     <tr key={k}>
@@ -86,7 +86,7 @@ function Videos(){
                                     </tr>
                                 )
                             })
-                        }
+                        } */}
                     </tbody>
                 </table>
             </div>

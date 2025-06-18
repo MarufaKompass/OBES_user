@@ -14,7 +14,7 @@ const INITIAL_INTEGRATION_LIST = [
     {name : "Hubspot", icon : "https://cdn-icons-png.flaticon.com/512/5968/5968872.png", isActive : false, description : "American developer and marketer of software products for inbound marketing, sales, and customer service."},
 ]
 
-function Integration(){
+function Questions(){
 
     const dispatch = useDispatch()
 
@@ -57,4 +57,4 @@ function Integration(){
     )
 }
 
-export default Integration
+export default Questions;

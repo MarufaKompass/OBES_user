@@ -1,18 +1,18 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
-import Integration from '../../../ProjectFeatures/integration'
+import Health from '../../../ProjectFeatures/health'
 
 function InternalPage(){
-
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title : "Integrations"}))
+        dispatch(setPageTitle({ title : "Heath Reviews"}))
       }, [])
-      
+
+
     return(
-        <Integration />
+        <Health />
     )
 }
 

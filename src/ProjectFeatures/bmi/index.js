@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import TitleCard from "../../components/Cards/TitleCard"
 import { openModal } from "../common/modalSlice"
-import { deleteLead, getLeadsContent } from "./leadSlice"
+import { deleteLead, getBmiContent } from "./bmiSlice"
 import { CONFIRMATION_MODAL_CLOSE_TYPES, MODAL_BODY_TYPES } from '../../utils/globalConstantUtil'
 import TrashIcon from '@heroicons/react/24/outline/TrashIcon'
 import { showNotification } from '../common/headerSlice'
@@ -23,13 +23,13 @@ const TopSideButtons = () => {
     )
 }
 
-function Leads(){
+function Bmi(){
 
-    const {leads } = useSelector(state => state.lead)
+    const {bmi } = useSelector(state => state.bmi)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getLeadsContent())
+        dispatch(getBmiContent())
     }, [])
 
     
@@ -65,9 +65,9 @@ function Leads(){
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
+                    {/* <tbody>
                         {
-                            leads.map((l, k) => {
+                            bmi.map((l, k) => {
                                 return(
                                     <tr key={k}>
                                     <td>
@@ -92,7 +92,7 @@ function Leads(){
                                 )
                             })
                         }
-                    </tbody>
+                    </tbody> */}
                 </table>
             </div>
             </TitleCard>
@@ -101,4 +101,4 @@ function Leads(){
 }
 
 
-export default Leads
+export default Bmi;

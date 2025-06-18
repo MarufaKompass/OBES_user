@@ -7,10 +7,7 @@ import StackBarChart from './components/StackBarChart'
 import Datepicker from "react-tailwindcss-datepicker"; 
 import { useState } from 'react'
 
-
-
-
-function Charts(){
+function Health(){
 
     const [dateValue, setDateValue] = useState({ 
         startDate: new Date(), 
@@ -55,4 +52,4 @@ function Charts(){
     )
 }
 
-export default Charts
+export default Health;

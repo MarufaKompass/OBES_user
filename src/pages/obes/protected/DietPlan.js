@@ -4,16 +4,16 @@ import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice';
 import Diet from '../../../ProjectFeatures/diet';
 
 
-function DietPlan() {
+function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(setPageTitle({ title: "Diet" }))
-    }, [dispatch])
+    }, [])
 
     return (
         <Diet />
     )
 }
 
-export default DietPlan;
+export default InternalPage;

@@ -3,45 +3,46 @@ import axios from 'axios'
 
 
 
-export const getLeadsContent = createAsyncThunk('/leads/content', async () => {
+
+export const getBmiContent = createAsyncThunk('/bmi/content', async () => {
 	const response = await axios.get('/api/users?page=2', {})
 	return response.data;
 })
 
-export const leadsSlice = createSlice({
-    name: 'leads',
+export const bmiSlice = createSlice({
+    name: 'bmi',
     initialState: {
         isLoading: false,
-        leads : []
+        bmis : []
     },
     reducers: {
 
 
         addNewLead: (state, action) => {
             let {newLeadObj} = action.payload
-            state.leads = [...state.leads, newLeadObj]
+            state.bmi = [...state.bmi, newLeadObj]
         },
 
         deleteLead: (state, action) => {
             let {index} = action.payload
-            state.leads.splice(index, 1)
+            state.bmi.splice(index, 1)
         }
     },
 
     extraReducers: {
-		[getLeadsContent.pending]: state => {
+		[getBmiContent.pending]: state => {
 			state.isLoading = true
 		},
-		[getLeadsContent.fulfilled]: (state, action) => {
-			state.leads = action.payload.data
+		[getBmiContent.fulfilled]: (state, action) => {
+			state.bmi = action.payload.data
 			state.isLoading = false
 		},
-		[getLeadsContent.rejected]: state => {
+		[getBmiContent.rejected]: state => {
 			state.isLoading = false
 		},
     }
 })
 
-export const { addNewLead, deleteLead } = leadsSlice.actions
+export const { addNewLead, deleteLead } = bmiSlice.actions
 
-export default leadsSlice.reducer
+export default bmiSlice.reducer

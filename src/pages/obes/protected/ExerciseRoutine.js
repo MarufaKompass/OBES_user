@@ -4,16 +4,16 @@ import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice';
 import Exercise from '../../../ProjectFeatures/exercise';
 
 
-function ExerciseRoutine() {
+function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(setPageTitle({ title: "Exercise Routine" }))
-    }, [dispatch])
+    }, [])
 
     return (
         <Exercise />
     )
 }
 
-export default ExerciseRoutine;
+export default InternalPage;

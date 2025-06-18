@@ -1,17 +1,17 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
-import Leads from '../../../ProjectFeatures/leads'
+import Bmi from '../../../ProjectFeatures/bmi'
 
 function InternalPage(){
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(setPageTitle({ title : "Leads"}))
+        dispatch(setPageTitle({ title : "Bmi"}))
       }, [])
 
     return(
-        <Leads />
+        <Bmi />
     )
 }
 

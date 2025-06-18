@@ -1,13 +1,14 @@
 // All components mapping with path for internal routes
 
 import { lazy } from "react";
+
 const Dashboard = lazy(() => import("../../pages/obes/protected/Dashboard"));
 const Welcome = lazy(() => import("../../pages/obes/protected/Welcome"));
 const Page404 = lazy(() => import("../../pages/obes/protected/404"));
 const Blank = lazy(() => import("../../pages/obes/protected/Blank"));
-const Charts = lazy(() => import("../../pages/obes/protected/Charts"));
-const Leads = lazy(() => import("../../pages/obes/protected/Leads"));
-const Integration = lazy(() => import("../../pages/obes/protected/Integration"));
+const Health = lazy(() => import("../../pages/obes/protected/Health"))
+const Bmi = lazy(() => import("../../pages/obes/protected/Bmi"));
+const Questions = lazy(() => import("../../pages/obes/protected/ObesQuestion"));
 const Calendar = lazy(() => import("../../pages/obes/protected/Calendar"));
 const Team = lazy(() => import("../../pages/obes/protected/Team"));
 const DietPlan = lazy(() => import("../../pages/obes/protected/DietPlan"));
@@ -30,17 +31,29 @@ const routes = [
     component: Welcome,
   },
   {
-    path: "/leads",
-    component: Leads,
+    path: "/bmi",
+    component: Bmi,
   },
+    {
+    path: "/health",
+    component: Health,
+  },
+
+    {
+    path: "/questions",
+    component: Questions,
+  },
+
+
+
   {
     path: "/settings-team",
     component: Team,
   },
-  {
-    path: "/calendar",
-    component: Calendar,
-  },
+  // {
+  //   path: "/calendar",
+  //   component: Calendar,
+  // },
 
 
 
@@ -85,14 +98,7 @@ const routes = [
     path: "/components",
     component: DocComponents,
   },
-  {
-    path: "/integration",
-    component: Integration,
-  },
-  {
-    path: "/charts",
-    component: Charts,
-  },
+
   {
     path: "/404",
     component: Page404,

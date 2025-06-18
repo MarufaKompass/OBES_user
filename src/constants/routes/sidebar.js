@@ -24,26 +24,26 @@ const routes = [
     name: "Dashboard",
   },
   {
-    path: "/leads",
+    path: "/bmi",
     icon: <InboxArrowDownIcon className={iconClasses} />,
-    name: "Leads",
+    name: "Bmi",
   },
 
   {
-    path: "/charts",
+    path: "/health",
     icon: <ChartBarIcon className={iconClasses} />,
-    name: "Analytics",
+    name: "Heath Review",
   },
   {
-    path: "/integration",
+    path: "/questions",
     icon: <BoltIcon className={iconClasses} />,
-    name: "Integration",
+    name: "Question",
   },
-  {
-    path: "/calendar",
-    icon: <CalendarDaysIcon className={iconClasses} />,
-    name: "Calendar",
-  },
+  // {
+  //   path: "/calendar",
+  //   icon: <CalendarDaysIcon className={iconClasses} />,
+  //   name: "Calendar",
+  // },
 
   {
     path: "obes",
@@ -73,50 +73,50 @@ const routes = [
       },
     ],
   },
-  {
-    path: "",
-    icon: <Cog6ToothIcon className={`${iconClasses} inline`} />,
-    name: "Settings",
-    submenu: [
-      {
-        path: "/settings-profile",
-        icon: <UserIcon className={submenuIconClasses} />,
-        name: "Profile",
-      },
-      {
-        path: "/settings-billing",
-        icon: <WalletIcon className={submenuIconClasses} />,
-        name: "Billing",
-      },
-      {
-        path: "/settings-team", // url
-        icon: <UsersIcon className={submenuIconClasses} />,
-        name: "Team Members",
-      },
-    ],
-  },
-  {
-    path: "",
-    icon: <DocumentTextIcon className={`${iconClasses} inline`} />,
-    name: "Documentation",
-    submenu: [
-      {
-        path: "/app/getting-started",
-        icon: <DocumentTextIcon className={submenuIconClasses} />,
-        name: "Getting Started",
-      },
-      {
-        path: "/app/features",
-        icon: <TableCellsIcon className={submenuIconClasses} />,
-        name: "Features",
-      },
-      {
-        path: "/app/components",
-        icon: <CodeBracketSquareIcon className={submenuIconClasses} />,
-        name: "Components",
-      },
-    ],
-  },
+  // {
+  //   path: "",
+  //   icon: <Cog6ToothIcon className={`${iconClasses} inline`} />,
+  //   name: "Settings",
+  //   submenu: [
+  //     {
+  //       path: "/settings-profile",
+  //       icon: <UserIcon className={submenuIconClasses} />,
+  //       name: "Profile",
+  //     },
+  //     {
+  //       path: "/settings-billing",
+  //       icon: <WalletIcon className={submenuIconClasses} />,
+  //       name: "Billing",
+  //     },
+  //     {
+  //       path: "/settings-team", 
+  //       icon: <UsersIcon className={submenuIconClasses} />,
+  //       name: "Team Members",
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "",
+  //   icon: <DocumentTextIcon className={`${iconClasses} inline`} />,
+  //   name: "Documentation",
+  //   submenu: [
+  //     {
+  //       path: "/app/getting-started",
+  //       icon: <DocumentTextIcon className={submenuIconClasses} />,
+  //       name: "Getting Started",
+  //     },
+  //     {
+  //       path: "/app/features",
+  //       icon: <TableCellsIcon className={submenuIconClasses} />,
+  //       name: "Features",
+  //     },
+  //     {
+  //       path: "/app/components",
+  //       icon: <CodeBracketSquareIcon className={submenuIconClasses} />,
+  //       name: "Components",
+  //     },
+  //   ],
+  // },
 ];
 
 export default routes;

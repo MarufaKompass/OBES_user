@@ -4,16 +4,16 @@ import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice';
 import Diet from '../../../ProjectFeatures/diet';
 
 
-function DailyTrack() {
+function InternalPage() {
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(setPageTitle({ title: "Daily Track" }))
-    }, [dispatch])
+    }, [])
 
     return (
         <Diet />
     )
 }
 
-export default DailyTrack;
+export default InternalPage;
