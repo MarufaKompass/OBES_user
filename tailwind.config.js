@@ -40,10 +40,12 @@ module.exports = {
     extend: {
       colors: {
         primary: "#7B1E19",
-        secondary: "#F59E0B",
+        secondary: "#93201a",
         danger: "#DC2626",
         success: "#16A34A",
         customGray: "#F3F4F6",
+        white:'#fff',
+        whiteGraph:'#dcdddd'
       },
     },
   },
