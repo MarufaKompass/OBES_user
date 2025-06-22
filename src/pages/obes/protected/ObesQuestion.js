@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
-import Questions from '../../../ProjectFeatures/integration'
+import Questions from '../../../ProjectFeatures/questions'
 
 function InternalPage(){
 
