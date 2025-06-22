@@ -30,3 +30,9 @@
     height: 120px;
     animation: spin 2s linear infinite;
 }
+
+
+.menu li > *:not(ul):not(.menu-title):not(details):active, .menu li > *:not(ul):not(.menu-title):not(details).active, .menu li > details > summary:active {
+    background-color: #7B1E19;
+
+}

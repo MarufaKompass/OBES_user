@@ -45,10 +45,14 @@ module.exports = {
         success: "#16A34A",
         customGray: "#F3F4F6",
         white:'#fff',
-        whiteGraph:'#dcdddd'
+        whiteGraph:'#dcdddd',
+          "neutral": "#1f2937",  // customize to your dark bg
+        "neutral-content": "#ffffff",  // text color on that bg
       },
     },
+     
   },
+  
 
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
 
