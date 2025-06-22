@@ -7,9 +7,6 @@ import logo from '../images/logo.png';
 function LeftSidebar(){
     const location = useLocation();
 
-    const dispatch = useDispatch()
-
-
     const close = (e) => {
         document.getElementById('left-sidebar-drawer').click()
     }
@@ -41,8 +38,6 @@ function LeftSidebar(){
                                         end
                                         to={route.path}
                                         className={({isActive}) => `${isActive ? 'font-semibold  ' : 'font-normal'}`}
-
-
                                          >
                                          {route.icon} {route.name}
                                             {

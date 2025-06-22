@@ -61,7 +61,7 @@ function Questions(){
 
 
 return (
-  <TitleCard title="Health Review" topMargin="mt-2">
+  <TitleCard title="Questions For Survey" topMargin="mt-2">
     {isSubmitted ? (
       <div className="max-w-2xl mx-auto p-6">
         <div className="card bg-base-100 shadow-lg text-center">
@@ -110,7 +110,7 @@ return (
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-          {/* {renderCurrentQuestion()} */}
+          {/* {isCurrentStepComplete()} */}
 
           <div className="flex justify-between items-center">
             <button
