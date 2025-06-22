@@ -1,7 +1,6 @@
-import {useState } from "react";
+import { useState } from "react";
 
 import TitleCard from "../../components/Cards/TitleCard";
-
 
 // const TopSideButtons = () => {
 
@@ -107,30 +106,30 @@ function Bmi() {
                     <span className="label-text">
                       {unit === "metric" ? "Height (cm)" : "Height (inches)"}
                     </span>
-                                  </label>
-                                  <input
-                                      type="number"
-                                      placeholder={unit === "metric" ? "e.g. 175" : "e.g. 69"}
-                                      value={height}
-                                      onChange={(e) => setHeight(e.target.value)}
-                                      className="input input-bordered focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                                  />
-                              </div>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder={unit === "metric" ? "e.g. 175" : "e.g. 69"}
+                    value={height}
+                    onChange={(e) => setHeight(e.target.value)}
+                    className="input input-bordered focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  />
+                </div>
 
-                              <div className="form-control mt-2">
-                                  <label className="label">
-                                      <span className="label-text">
-                                          {unit === "metric" ? "Weight (kg)" : "Weight (lbs)"}
-                                      </span>
-                                  </label>
-                                  <input
-                                      type="number"
-                                      placeholder={unit === "metric" ? "e.g. 70" : "e.g. 154"}
-                                      value={weight}
-                                      onChange={(e) => setWeight(e.target.value)}
-                                      className="input input-bordered focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                                  />
-                              </div>
+                <div className="form-control mt-2">
+                  <label className="label">
+                    <span className="label-text">
+                      {unit === "metric" ? "Weight (kg)" : "Weight (lbs)"}
+                    </span>
+                  </label>
+                  <input
+                    type="number"
+                    placeholder={unit === "metric" ? "e.g. 70" : "e.g. 154"}
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                    className="input input-bordered focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  />
+                </div>
 
                 <div className="flex gap-2 mt-4">
                   <button
@@ -148,50 +147,64 @@ function Bmi() {
                   </button>
                 </div>
 
-                {/* {bmi !== null && (
-            <div className="mt-6 bg-base-100 rounded-xl p-4 shadow border">
-              <h3 className="text-center font-semibold">Your Result</h3>
+                {bmi !== null && (
+                  <div className="mt-6 bg-base-100 rounded-xl p-4 shadow border">
+                    <h3 className="text-center font-semibold">Your Result</h3>
 
-              <div className="flex justify-center my-4">
-                <div className="radial-progress text-primary" style={{ "--value": bmi }} role="progressbar">
-                  {bmi}
-                </div>
-              </div>
+                    <div className="flex justify-center my-4">
+                      <div
+                        className="radial-progress text-primary"
+                        style={{ "--value": bmi }}
+                        role="progressbar"
+                      >
+                        {bmi}
+                      </div>
+                    </div>
 
-              <p className={`text-center font-medium ${getBMICategory(bmi).color}`}>
-                {getBMICategory(bmi).category}
-              </p>
+                    <p
+                      className={`text-center font-medium ${
+                        getBMICategory(bmi).color
+                      }`}
+                    >
+                      {getBMICategory(bmi).category}
+                    </p>
 
-              <div className="relative h-3 mt-6 bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500 rounded-full">
-                <div
-                  className="absolute w-4 h-6 bg-white border border-gray-800 rounded-full -mt-2 transform -translate-x-1/2"
-                  style={{ left: getBMICategory(bmi).percentage }}
-                ></div>
-              </div>
+                    <div className="relative h-3 mt-6 bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500 rounded-full">
+                      <div
+                        className="absolute w-4 h-6 bg-white border border-gray-800 rounded-full -mt-2 transform -translate-x-1/2"
+                        style={{ left: getBMICategory(bmi).percentage }}
+                      ></div>
+                    </div>
 
-              <div className="flex justify-between text-xs text-gray-600 mt-2 px-1">
-                <span>16</span>
-                <span>18.5</span>
-                <span>25</span>
-                <span>30</span>
-                <span>40</span>
-              </div>
+                    <div className="flex justify-between text-xs text-gray-600 mt-2 px-1">
+                      <span>16</span>
+                      <span>18.5</span>
+                      <span>25</span>
+                      <span>30</span>
+                      <span>40</span>
+                    </div>
 
-              <div className="alert alert-info mt-4 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="stroke-current shrink-0 h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>
-                  BMI is a screening tool, not a diagnostic of body fatness or health. Consult your healthcare provider.
-                </span>
-              </div>
-            </div>
-          )} */}
+                    <div className="alert alert-info mt-4 text-sm">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="stroke-current shrink-0 h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                      <span>
+                        BMI is a screening tool, not a diagnostic of body
+                        fatness or health. Consult your healthcare provider.
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

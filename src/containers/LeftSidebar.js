@@ -1,8 +1,8 @@
 import routes from "../constants/routes/sidebar";
-import { NavLink, Routes, Link, useLocation } from "react-router-dom";
+import { Routes, Link, useLocation } from "react-router-dom";
 import SidebarSubmenu from "./SidebarSubmenu";
 import XMarkIcon from "@heroicons/react/24/outline/XMarkIcon";
-import { useDispatch } from "react-redux";
+
 import logo from "../images/logo.png";
 function LeftSidebar() {
   const location = useLocation();
@@ -36,14 +36,8 @@ function LeftSidebar() {
                 <Link
                   end
                   to={route.path}
-                //   className={({isActive}) => `${isActive ? 'font-semibold  ' : 'font-normal'}`}
-                className={({ isActive }) =>
-      `rounded-md p-2 ${
-        isActive
-          ? "bg-neutral text-neutral-content font-semibold"
-          : "hover:bg-base-200"
-      }`
-    }
+                    className={({isActive}) => `${isActive ? 'font-semibold  ' : 'font-normal'}`}
+               
                 >
                   {route.icon} {route.name}
                   {location.pathname === route.path ? (
