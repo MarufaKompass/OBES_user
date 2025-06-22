@@ -21,30 +21,7 @@ export const anotherRoutes = [
         path: "/profile",
         element: <Profile />,
       },
-      // {
-      // //   icon: <UserCircleIcon {...icon} />,
-      //   name: "About",
-      //   path: "/about",
-      //   element: <About />,
-      // },
-      // {
-      //   //   icon: <TableCellsIcon {...icon} />,
-      //     name: "Bmi",
-      //     path: "/bmi",
-      //     element: <BMI />,
-      // },
-      // {
-      //   //   icon: <TableCellsIcon {...icon} />,
-      //     name: "Health Review",
-      //     path: "/healthReview",
-      //     element: <HealthReview />,
-      // },
-      // {
-      // //   icon: <TableCellsIcon {...icon} />,
-      //   name: "contact Us",
-      //   path: "/contactUs",
-      //   element: <ContactUs />,
-      // },
+
     ],
   },
 ];
