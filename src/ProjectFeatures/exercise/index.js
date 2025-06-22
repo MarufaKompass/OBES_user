@@ -1,8 +1,6 @@
 import moment from "moment";
 import TitleCard from "../../components/Cards/TitleCard";
 import { useState } from "react";
-import { Calendar, Utensils, Dumbbell, Heart } from "lucide-react";
-import Routine from "./Routine";
 import Nutrition from "./Nutrition";
 import ExercisePlan from "./ExercisePlan";
 

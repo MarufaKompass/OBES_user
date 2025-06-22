@@ -1,128 +1,161 @@
-import moment from "moment"
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { showNotification } from "../common/headerSlice"
-import TitleCard from "../../components/Cards/TitleCard"
-import { RECENT_TRANSACTIONS } from "../../utils/dummyData"
-import FunnelIcon from '@heroicons/react/24/outline/FunnelIcon'
-import XMarkIcon from '@heroicons/react/24/outline/XMarkIcon'
-import SearchBar from "../../components/Input/SearchBar"
+import { Check, Plus, X } from "lucide-react";
+import TitleCard from "../../components/Cards/TitleCard";
+import { useState } from "react";
 
-const TopSideButtons = ({removeFilter, applyFilter, applySearch}) => {
+function Daily() {
+  const [activities, setActivities] = useState([
+    { id: "1", name: "Morning workout", completed: false },
+    { id: "2", name: "Read for 30 minutes", completed: false },
+    { id: "3", name: "Drink 8 glasses of water", completed: false },
+    { id: "4", name: "Meditate for 10 minutes", completed: false },
+  ]);
+  const [newActivity, setNewActivity] = useState("");
 
-    const [filterParam, setFilterParam] = useState("")
-    const [searchText, setSearchText] = useState("")
-    const locationFilters = ["Paris", "London", "Canada", "Peru", "Tokyo"]
+  const completedCount = activities.filter(
+    (activity) => activity.completed
+  ).length;
+  const progress =
+    activities.length > 0 ? (completedCount / activities.length) * 100 : 0;
 
-    const showFiltersAndApply = (params) => {
-        applyFilter(params)
-        setFilterParam(params)
+  const toggleActivity = (id) => {
+    setActivities(
+      activities.map((activity) =>
+        activity.id === id
+          ? { ...activity, completed: !activity.completed }
+          : activity
+      )
+    );
+  };
+
+  const addActivity = () => {
+    if (newActivity.trim()) {
+      setActivities([
+        ...activities,
+        {
+          id: Date.now().toString(),
+          name: newActivity.trim(),
+          completed: false,
+        },
+      ]);
+      setNewActivity("");
     }
+  };
 
-    const removeAppliedFilter = () => {
-        removeFilter()
-        setFilterParam("")
-        setSearchText("")
+  const removeActivity = (id) => {
+    setActivities(activities.filter((activity) => activity.id !== id));
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      addActivity();
     }
+  };
 
-    useEffect(() => {
-        if(searchText == ""){
-            removeAppliedFilter()
-        }else{
-            applySearch(searchText)
-        }
-    }, [searchText])
-
-    return(
-        <div className="inline-block float-right">
-            <SearchBar searchText={searchText} styleClass="mr-4" setSearchText={setSearchText}/>
-            {filterParam != "" && <button onClick={() => removeAppliedFilter()} className="btn btn-xs mr-2 btn-active btn-ghost normal-case">{filterParam}<XMarkIcon className="w-4 ml-2"/></button>}
-            <div className="dropdown dropdown-bottom dropdown-end">
-                <label tabIndex={0} className="btn btn-sm btn-outline"><FunnelIcon className="w-5 mr-2"/>Filter</label>
-                <ul tabIndex={0} className="dropdown-content menu p-2 text-sm shadow bg-base-100 rounded-box w-52">
-                    {
-                        locationFilters.map((l, k) => {
-                            return  <li key={k}><a onClick={() => showFiltersAndApply(l)}>{l}</a></li>
-                        })
-                    }
-                    <div className="divider mt-0 mb-0"></div>
-                    <li><a onClick={() => removeAppliedFilter()}>Remove Filter</a></li>
-                </ul>
+  const formatDate = () => {
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return new Date().toLocaleDateString("en-US", options);
+  };
+  return (
+    <>
+      <TitleCard title="Daily Tracker" topMargin="mt-2">
+        <div>
+          <div className="w-full bg-white rounded-lg shadow-lg p-6">
+            <div className="mb-4">
+              <h2
+                className="text-2xl font-bold"
+                style={{ fontFamily: "poppins" }}
+              >
+                Daily Tracker
+              </h2>
+              <p className="text-gray-500 text-sm">{formatDate()}</p>
             </div>
+
+            <div className="mb-6">
+              <div className="flex items-center justify-between text-sm mb-2">
+                <span style={{ fontFamily: "poppins" }}>Progress</span>
+                <span className="font-medium" style={{ fontFamily: "poppins" }}>
+                  {completedCount}/{activities.length} completed
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                <div
+                  className="bg-[#FE9A00] h-full rounded-full transition-all duration-300"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
+            </div>
+
+            <div className="space-y-2 mb-4">
+              {activities.map((activity) => (
+                <div
+                  key={activity.id}
+                  className="flex items-center justify-between border rounded-lg p-3 shadow-sm border-[#d1d1cf]"
+                >
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => toggleActivity(activity.id)}
+                      className={`h-6 w-6 flex items-center justify-center rounded-full border border-[#d1d1cf] ${
+                        activity.completed
+                          ? "bg-[#FE9A00] hover:bg-[#FE9A00]"
+                          : "hover:bg-gray-100"
+                      }`}
+                    >
+                      {activity.completed && (
+                        <Check className="h-3 w-3 text-white" />
+                      )}
+                    </button>
+                    <span
+                      className={`${
+                        activity.completed
+                          ? "line-through text-gray-400"
+                          : "text-gray-900"
+                      }`}
+                    >
+                      {activity.name}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => removeActivity(activity.id)}
+                    className="h-6 w-6 flex items-center justify-center rounded-full text-gray-500 hover:text-gray-800"
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex space-x-2 mb-4">
+              <input
+                type="text"
+                placeholder="Add a new activity..."
+                value={newActivity}
+                onChange={(e) => setNewActivity(e.target.value)}
+                onKeyDown={handleKeyDown}
+                className="flex-1 px-3 py-2 border border-[#d1d1cf] rounded-md focus:outline-none focus:ring-1 focus:ring-[#d1d1cf]"
+              />
+              <button
+                onClick={addActivity}
+                className="p-2 bg-[#FE9A00] text-white rounded-md hover:bg-blue-600"
+              >
+                <Plus className="h-4 w-4" />
+              </button>
+            </div>
+
+            <div className="text-sm text-[#848580] border-t border-[#d1d1cf] pt-4">
+              {completedCount === activities.length && activities.length > 0
+                ? "Great job! All tasks completed."
+                : "Keep going, you're making progress!"}
+            </div>
+          </div>
         </div>
-    )
+      </TitleCard>
+    </>
+  );
 }
-
-
-function Daily(){
-
-
-    const [trans, setTrans] = useState(RECENT_TRANSACTIONS)
-
-    const removeFilter = () => {
-        setTrans(RECENT_TRANSACTIONS)
-    }
-
-    const applyFilter = (params) => {
-        let filteredTransactions = RECENT_TRANSACTIONS.filter((t) => {return t.location == params})
-        setTrans(filteredTransactions)
-    }
-
-    // Search according to name
-    const applySearch = (value) => {
-        let filteredTransactions = RECENT_TRANSACTIONS.filter((t) => {return t.email.toLowerCase().includes(value.toLowerCase()) ||  t.email.toLowerCase().includes(value.toLowerCase())})
-        setTrans(filteredTransactions)
-    }
-
-    return(
-        <>
-            
-            <TitleCard title="Recent Transactions" topMargin="mt-2" TopSideButtons={<TopSideButtons applySearch={applySearch} applyFilter={applyFilter} removeFilter={removeFilter}/>}>
-
-                {/* Team Member list in table format loaded constant */}
-            <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Email Id</th>
-                        <th>Location</th>
-                        <th>Amount</th>
-                        <th>Transaction Date</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            trans.map((l, k) => {
-                                return(
-                                    <tr key={k}>
-                                    <td>
-                                        <div className="flex items-center space-x-3">
-                                            <div className="avatar">
-                                                <div className="mask mask-circle w-12 h-12">
-                                                    <img src={l.avatar} alt="Avatar" />
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold">{l.name}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>{l.email}</td>
-                                    <td>{l.location}</td>
-                                    <td>${l.amount}</td>
-                                    <td>{moment(l.date).format("D MMM")}</td>
-                                    </tr>
-                                )
-                            })
-                        }
-                    </tbody>
-                </table>
-            </div>
-            </TitleCard>
-        </>
-    )
-}
-
 
 export default Daily;

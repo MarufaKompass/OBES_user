@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
-import Videos from '../../../ProjectFeatures/vidios/Videos'
+import Videos from '../../../ProjectFeatures/videos'
+
 
 function InternalPage(){
     const dispatch = useDispatch()

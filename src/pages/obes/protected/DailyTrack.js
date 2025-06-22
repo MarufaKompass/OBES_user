@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice';
-import Diet from '../../../ProjectFeatures/diet';
+import Daily from '../../../ProjectFeatures/daily/Daily';
 
 
 function InternalPage() {
@@ -12,7 +12,7 @@ function InternalPage() {
     }, [])
 
     return (
-        <Diet />
+        <Daily />
     )
 }
 

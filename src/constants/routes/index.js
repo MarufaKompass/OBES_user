@@ -9,13 +9,12 @@ const Blank = lazy(() => import("../../pages/obes/protected/Blank"));
 const Health = lazy(() => import("../../pages/obes/protected/Health"))
 const Bmi = lazy(() => import("../../pages/obes/protected/Bmi"));
 const Questions = lazy(() => import("../../pages/obes/protected/ObesQuestion"));
-const Calendar = lazy(() => import("../../pages/obes/protected/Calendar"));
 const Team = lazy(() => import("../../pages/obes/protected/Team"));
 const DietPlan = lazy(() => import("../../pages/obes/protected/DietPlan"));
 const ExerciseRoutine = lazy(() => import("../../pages/obes/protected/ExerciseRoutine"));
 const DailyTrack  = lazy(() => import("../../pages/obes/protected/DailyTrack"));
 const ObesVideos = lazy(() => import("../../pages/obes/protected/ObesVideos"));
-const Bills = lazy(() => import("../../pages/obes/protected/Bills"));
+
 const ProfileSettings = lazy(() => import("../../pages/obes/protected/ProfileSettings"));
 const GettingStarted = lazy(() => import("../../pages/obes/GettingStarted"));
 const DocFeatures = lazy(() => import("../../pages/obes/DocFeatures"));
@@ -82,10 +81,7 @@ const routes = [
     path: "/settings-profile",
     component: ProfileSettings,
   },
-  {
-    path: "/settings-billing",
-    component: Bills,
-  },
+
   {
     path: "/getting-started",
     component: GettingStarted,
