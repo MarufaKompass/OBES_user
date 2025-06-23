@@ -78,7 +78,7 @@ const routes = [
 
 
   {
-    path: "/settings-profile",
+    path: "/app/settings-profile",
     component: ProfileSettings,
   },
 

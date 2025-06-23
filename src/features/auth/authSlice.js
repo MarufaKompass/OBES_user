@@ -5,7 +5,7 @@ const auth = localStorage.getItem("auth")
   : null;
 
 const initialState = {
-  token: auth?.token,
+  token: auth?.accessToken,
 };
 
 const authSlice = createSlice({
@@ -18,10 +18,10 @@ const authSlice = createSlice({
     },
 
 
-    userLoggedOut: (state) => {
-      state.accessToken = null;
-      // state.user = undefined;
-    },
+    // userLoggedOut: (state) => {
+    //   state.accessToken = null;
+    //   // state.user = undefined;
+    // },
   },
 });
 

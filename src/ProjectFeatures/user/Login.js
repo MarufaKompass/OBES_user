@@ -21,7 +21,7 @@ function Login() {
 
   const [resLogin, { data, isLoading, error: loginError }] = useLoginMutation();
 
-  console.log("data", data?.token);
+  // console.log("data", data?.token);
 
   useEffect(() => {
     if (data?.token) {
