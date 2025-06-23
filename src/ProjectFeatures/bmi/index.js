@@ -6,6 +6,7 @@ import { useGetProfileQuery } from "../../features/profile/profileApi";
 
 function Bmi() {
     const { data: profile } = useGetProfileQuery();
+
     console.log("profile", profile?.data?.id)
   const [postBmi, { data, isLoading, error }] = usePostBmiMutation();
 
