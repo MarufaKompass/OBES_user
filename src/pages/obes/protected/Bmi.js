@@ -1,18 +1,20 @@
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { setPageTitle } from '../../../ProjectFeatures/common/headerSlice'
-import Bmi from '../../../ProjectFeatures/bmi'
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setPageTitle } from "../../../ProjectFeatures/common/headerSlice";
+import Bmi from "../../../ProjectFeatures/bmi";
 
-function InternalPage(){
-    const dispatch = useDispatch()
+function InternalPage() {
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(setPageTitle({ title : "Bmi"}))
-      }, [])
+  useEffect(() => {
+    dispatch(setPageTitle({ title: "Bmi" }));
+  }, []);
 
-    return(
-        <Bmi />
-    )
+  return (
+    <>
+      <Bmi />
+    </>
+  );
 }
 
-export default InternalPage
+export default InternalPage;

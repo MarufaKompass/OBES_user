@@ -10,3 +10,4 @@ const bmiSlice = createSlice({
 })
 
 export const {} = bmiSlice.actions;
+export default bmiSlice.reducer;
