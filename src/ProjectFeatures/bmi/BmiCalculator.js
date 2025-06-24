@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import TitleCard from "../../components/Cards/TitleCard";
 import { usePostBmiMutation } from "../../features/bmi/bmiApi";
 import { useGetProfileQuery } from "../../features/profile/profileApi";
 import { TrendingUpDown ,Calculator} from 'lucide-react';
