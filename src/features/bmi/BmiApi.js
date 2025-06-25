@@ -11,7 +11,7 @@ export const bmiApi = apiSlice.injectEndpoints({
     }),
 
     getBmi: builder.query({
-      query: ({id,role}) => `/public/api/${role}/bmiu/${id}`,
+      query: ({id}) => `/public/api/bmiu/${id}`,
     }),
   }),
 });

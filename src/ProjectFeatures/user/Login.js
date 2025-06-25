@@ -91,7 +91,7 @@ function Login() {
               <div className="text-center mt-4">
                 Don't have an account yet?{" "}
                 <Link to="/register">
-                  <span className="  inline-block  text-primary underline hover:cursor-pointer transition duration-200">
+                  <span className=" font-bold inline-block  text-primary underline hover:cursor-pointer transition duration-200">
                     Register
                   </span>
                 </Link>
