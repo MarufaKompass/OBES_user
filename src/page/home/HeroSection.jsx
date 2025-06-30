@@ -1,45 +1,43 @@
-import React from 'react'
 // import { Link } from 'react-router'
-// import {
-//   ArrowRight,
-// } from "lucide-react"
+import {
+  Heart,ArrowRight
+} from "lucide-react"
 
 import heroSection from "../../../public/images/home/heroSection.png"
 export default function HeroSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fbfbfb]">
     <div className="container mx-auto px-4 md:px-6">
-      <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+      <div className="grid gap-6 grid-cols-2">
+
         <div className="flex flex-col justify-center space-y-4">
-          <div className="space-y-2">
-            <h1 className="text-[30px] font-bold tracking-wide md:text-[40px] xl:text-[44px] text-[#7b1e19] leading-[55px] uppercase" >
-              Your Health Is Our <br></br> Top Priority
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-primary-color" style={{ backgroundColor: 'rgba(123, 30, 25, 0.3)' }}>
+              <Heart className="h-4 w-4" />
+              Your Health Journey Starts Here
+            </div>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              Transform Your Life with
+              <span className="text-primary-color font-[poppins]"> Expert Obesity Care</span>
             </h1>
-            <p className="max-w-[600px] text-secondary-color md:text-[16px] font-normal mt-6" >
-              Providing exceptional healthcare services with compassion and expertise. Schedule your appointment today.
+            <p className="text-lg text-gray-600 md:text-xl font-[poppins] mt-4" >
+              Comprehensive, compassionate care for sustainable weight management. Our evidence-based approach helps you
+              achieve lasting health improvements.
             </p>
-          </div>
-          {/* <div className="flex flex-col gap-2 min-[400px]:flex-row">
-            <Link
-              to="/appointment"
-              className="inline-flex items-center justify-center rounded-md bg-blue-600 px-6 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 transition-colors"
-            >
-              Book Appointment
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-            <Link
-              to="/about"
-              className="inline-flex items-center justify-center rounded-md border border-gray-300 px-6 py-3 text-sm font-medium text-gray-800 hover:bg-gray-100 transition-colors"
-            >
-              Learn More
-            </Link>
-          </div> */}
+            <div className="flex flex-col gap-4 sm:flex-row mt-4">
+              <button size="lg" className="bg-primary-color hover:bg-primary-color text-white text-[14px] flex items-center py-2 px-4 font-[poppins] rounded-[4px]">
+                Get Started Today
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </button>
+            </div>
         </div>
-        <img
+
+      <div className="flex justify-center">
+          <img
           src={heroSection}
           alt="Healthcare professionals"
           className=" "
         />
+      </div>
       </div>
     </div>
   </section>

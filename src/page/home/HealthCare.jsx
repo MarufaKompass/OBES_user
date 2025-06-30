@@ -25,7 +25,7 @@ export default function HealthCare() {
             ]
 
   return (
-    <section id="services" className="w-full  py-20 container">
+    <section id="services" className="w-full py-12 bg-[#fafafa]">
       <div className="container">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
