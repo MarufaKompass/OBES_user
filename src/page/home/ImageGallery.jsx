@@ -15,6 +15,9 @@ const ImageGallery = () => {
   return (
 <div className="">
     <div className="container py-12">
+         <h2 className="text-[28px] font-bold md:text-[38px] leading-10 tracking-normal py-8 text-center" style={{fontFamily:'poppins'}}>
+              Bangladesh Endocrine Society
+            </h2>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {images.map((image, index) => (
           <div

@@ -2,9 +2,9 @@ import overWeight from "../../../public/images/home/overWeight.png";
 import {CheckCircle} from "lucide-react";
 export default function Health() {
   return (
-    <section className="w-full py-12 bg-muted ">
+    <section className="w-full py-24 bg-muted ">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-12 h-full">
+        <div className="grid gap-20 lg:grid-cols-2  h-full">
           {/* Image */}
           <img
             src={overWeight}

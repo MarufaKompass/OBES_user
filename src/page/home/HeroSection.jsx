@@ -3,7 +3,7 @@ import {
   Heart,ArrowRight
 } from "lucide-react"
 
-import heroSection from "../../../public/images/home/heroSection.png"
+import heroSection from "../../../public/images/home/banner.png";
 export default function HeroSection() {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fbfbfb]">
