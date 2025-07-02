@@ -9,7 +9,7 @@ export default function Health() {
           <img
             src={overWeight}
             alt="Modern medical facility"
-            className=""
+            className="w-[90%]"
           />
           <div className="flex flex-col justify-center space-y-4">
             {/* <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary" style={{ fontFamily: 'poppins' }}>About Us</div> */}

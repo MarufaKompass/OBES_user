@@ -7,7 +7,7 @@ import TopHeader from "../header/TopHeader";
 export default function MainLayout() {
   return (
     <div>
-      <TopHeader></TopHeader>
+      {/* <TopHeader></TopHeader> */}
       <Header />
       <main>
         <Outlet></Outlet>

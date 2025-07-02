@@ -1,12 +1,10 @@
 // import { Link } from 'react-router'
-import {
-  Heart,ArrowRight
-} from "lucide-react"
+import {Heart,ArrowRight} from "lucide-react"
 
-import heroSection from "../../../public/images/home/banner.png";
+import Slider from "./Slider";
 export default function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-[#fbfbfb]">
+    <section className="w-full py-12 bg-[#fbfbfb]">
     <div className="container mx-auto px-4 md:px-6">
       <div className="grid gap-6 grid-cols-2">
 
@@ -32,11 +30,12 @@ export default function HeroSection() {
         </div>
 
       <div className="flex justify-center">
-          <img
+          {/* <img
           src={heroSection}
           alt="Healthcare professionals"
           className=" "
-        />
+        /> */}
+         <Slider />
       </div>
       </div>
     </div>

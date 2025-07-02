@@ -4,9 +4,11 @@ import routes from "../routes";
 import logo from "../../public/images/logo/Logo.png";
 import { ChevronUp, ChevronDown } from "lucide-react";
 import { useObeContext } from "../../components/contextAPI/MainContextProvider";
-import man from "../../public/images/header/man.png"
-import UserInfo from "./UserInfo";
+import man from "../../public/images/header/man.png";
+import { useNavigate } from 'react-router-dom';
+// import UserInfo from "./UserInfo";
 export default function Header() {
+  const navigate = useNavigate();
   const pages = routes[0].pages;
   const [openIndex, setOpenIndex] = useState(null);
   const { user } = useObeContext();
@@ -14,11 +16,21 @@ export default function Header() {
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+
+  const handleButtonClickSignIn = () => {
+    navigate('/auth/sign-in');
+  };
+  const handleButtonClickSignUp = () => {
+    navigate('/auth/sign-up');
+  };
+
+
   return (
-    <nav className="p-6 shadow-lg">
+    <nav className="p-4 shadow-lg">
       <div className="flex justify-between px-10 container">
         <div>
-          <img src={logo} alt="logo" className="w-30" />
+          <img src={logo} alt="logo" className="w-15" />
         </div>
 
         <div className="flex gap-2 items-center">
@@ -52,7 +64,7 @@ export default function Header() {
                       key={childIndex}
                       to={child.path}
                       onClick={() => setOpenIndex(null)}
-                      className="block text-[#666] hover:text-[#ec9f2b] pl-4  textAlign-left capitalize w-[160px] text-[14px] font-normal py-[4px]"
+                      className="block text-[#666] hover:text-[#ec9f2b] pl-4  textAlign-left capitalize w-[160px] text-[14px] font-normal py-[4px] font-[poppins]"
                       style={{ fontFamily: "poppins" }}
                     >
                       {child.name}
@@ -64,12 +76,16 @@ export default function Header() {
           ))}
         </div>
         <div className=" flex justify-between items-center ml-4 rounded-2xl relative group cursor">
-        <div>
+        {/* <div>
           <img src={man} alt="man"  className="w-14 h-14" />
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <UserInfo></UserInfo>
-        </div>
+        </div> */}
+         <div className='flex gap-4 justify-end items-center h-auto'>
+        <button onClick={handleButtonClickSignIn} className="font-normal  text-[14px] underline " style={{ fontFamily: "poppins" }}>Sign In</button>
+        <button onClick={handleButtonClickSignUp} className="font-normal text-[14px] underline " style={{ fontFamily: "poppins" }}>Sign Up</button>
+      </div>
         </div>
       </div>
     </nav>

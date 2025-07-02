@@ -1,24 +1,25 @@
-import React from 'react'
-import { Badge } from "lucide-react";
+import wellness1 from "../../../public/images/home/wellness1.png";
+import wellness2 from "../../../public/images/home/wellness2.jpg";
+import wellness3 from "../../../public/images/home/wellness3.jpg";
 export default function Blog() {
     const data = [
         {
           title: "The Science of Sustainable Weight Loss",
           description: "Discover evidence-based approaches to achieving and maintaining a healthy weight.",
           date: "June 15, 2023",
-          image: "/placeholder.svg?height=200&width=300",
+          image: wellness1,
         },
         {
           title: "Nutrition Myths Debunked",
           description: "Separating fact from fiction in the world of nutrition and dietary advice.",
           date: "May 28, 2023",
-          image: "/placeholder.svg?height=200&width=300",
+          image: wellness2,
         },
         {
           title: "Mindfulness and Health",
           description: "How mindfulness practices can improve both physical and mental wellbeing.",
           date: "April 10, 2023",
-          image: "/placeholder.svg?height=200&width=300",
+          image:wellness3,
         },
       ]
   return (
@@ -31,8 +32,8 @@ export default function Blog() {
         <span className="inline-block rounded-[100%] border border-[#7b1e19] bg-[#7b1e19] px-6 py-2 text-sm font-medium text-[#fff]">
           Latest Articles
         </span>
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Health & Wellness Insights</h2>
-        <p className="max-w-[900px] text-gray-500 md:text-xl lg:text-base xl:text-xl">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mt-5">Health & Wellness Insights</h2>
+        <p className="max-w-[900px] text-gray-500 text-[16px] font-normal">
           Expert advice and evidence-based information to support your health journey.
         </p>
       </div>
@@ -67,11 +68,11 @@ export default function Blog() {
       ))}
     </div>
 
-    <div className="flex justify-center">
+    {/* <div className="flex justify-center">
       <button className="border border-[#7b1e19] text-[#7b1e19] px-4 py-2 rounded-md hover:bg-[#fff9ef]">
         View All Articles
       </button>
-    </div>
+    </div> */}
   </div>
 </section>
 

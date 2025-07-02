@@ -36,7 +36,7 @@ export default function HealthChecklist() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 py-24">
       {/* Decorative background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
@@ -55,9 +55,9 @@ export default function HealthChecklist() {
             <Sparkles className="w-6 h-6 text-yellow-500" />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-slate-800 via-slate-600 to-slate-800 bg-clip-text text-transparent mb-4">
-            7 Steps
+            7 Best
           </h1>
-          <p className="text-2xl text-slate-600 mb-6">For a Healthy Daily Routine</p>
+          <p className="text-2xl text-slate-600 mb-6">Practices For a Healthy Life</p>
           <div className="flex justify-center items-center gap-4 text-sm text-slate-500">
             <span>Progress: {completedSteps.length}/7</span>
             <div className="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
@@ -69,6 +69,8 @@ export default function HealthChecklist() {
           </div>
         </div>
 
+
+
         {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
           {healthSteps.map((step) => {
@@ -79,7 +81,7 @@ export default function HealthChecklist() {
             return (
               <div
                 key={step.id}
-                className={`cursor-pointer overflow-hidden rounded-xl shadow-md transition-all duration-300 border ${
+                className={`cursor-pointer overflow-hidden rounded-xl shadow-md transition-all duration-300 border border-[#DEDEDE] ${
                   isCompleted ? "ring-2 ring-green-400" : "hover:shadow-xl"
                 }`}
                 onMouseEnter={() => setHoveredStep(step.id)}
