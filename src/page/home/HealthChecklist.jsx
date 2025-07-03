@@ -72,7 +72,7 @@ export default function HealthChecklist() {
 
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16 ">
           {healthSteps.map((step) => {
             const Icon = step.icon
             const isCompleted = completedSteps.includes(step.id)
@@ -90,7 +90,7 @@ export default function HealthChecklist() {
               >
                 {/* Icon Area */}
                 <div className={`relative h-32 flex items-center justify-center bg-gradient-to-br ${step.color}`}>
-                  <div className="absolute top-3 left-3 w-8 h-8 bg-white/20 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                  <div className="absolute top-3 left-3 w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white text-xl font-bold">
                     {step.id}
                   </div>
 

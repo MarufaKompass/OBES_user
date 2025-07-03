@@ -1,10 +1,18 @@
+import image1 from "../../../public/images/home/gallery1.jpg"
+import image2 from "../../../public/images/home/gallery6.jpg"
+import image3 from "../../../public/images/home/gallery10.jpg"
+import image4 from "../../../public/images/home/gallery4.jpg"
+import image5 from "../../../public/images/home/gallery5.jpg"
+import image6 from "../../../public/images/home/gallery2.jpg"
+
+
 const images = [
-  { src: "../../../public/images/home/gallery1.jpg", colSpan: 1, rowSpan: 2 },
-  { src: "../../../public/images/home/gallery6.jpg", colSpan: 1, rowSpan: 2 },
-  { src: "../../../public/images/home/gallery10.jpg", colSpan: 1, rowSpan: 1 },
-  { src: "../../../public/images/home/gallery4.jpg", colSpan: 2, rowSpan: 2 },
-  { src: "../../../public/images/home/gallery5.jpg", colSpan: 1, rowSpan: 1 },
-  { src: "../../../public/images/home/gallery2.jpg", colSpan: 1, rowSpan: 1 },
+  { src: image1, colSpan: 1, rowSpan: 2 },
+  { src: image2, colSpan: 1, rowSpan: 2 },
+  { src: image3, colSpan: 1, rowSpan: 1 },
+  { src: image4, colSpan: 2, rowSpan: 2 },
+  { src: image5, colSpan: 1, rowSpan: 1 },
+  { src: image6, colSpan: 1, rowSpan: 1 },
   // { src:  "../../../public/images/home/gallery7.jpg", colSpan: 1, rowSpan: 1 },
   // { src: "../../../public/images/home/gallery8.jpg", colSpan: 1, rowSpan: 2 },
   // { src: "../../../public/images/home/gallery9.jpg", colSpan: 1, rowSpan: 1 },

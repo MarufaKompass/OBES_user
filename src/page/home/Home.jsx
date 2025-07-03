@@ -6,15 +6,17 @@ import Impact from "./Impact";
 import Blog from "./Blog";
 import ImageGallery from "./ImageGallery";
 import HealthChecklist from "./HealthChecklist";
+import Doctors from "./Doctors";
 export default function Home() {
   return (
     <div>
       <HeroSection></HeroSection>
       <ImageGallery></ImageGallery>
-      <HealthCare></HealthCare>
-      <Health></Health>
-      <Impact></Impact>
       <HealthChecklist></HealthChecklist>
+      <Doctors></Doctors>
+      <Health></Health>
+      <HealthCare></HealthCare>
+      <Impact></Impact>
       <Blog></Blog>
     </div>
   );
